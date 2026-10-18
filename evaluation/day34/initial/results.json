@@ -1,0 +1,53 @@
+{
+  "started": "2026-10-18T18:55:09.727051+00:00",
+  "root": "/var/folders/w0/k5bqhg0d4795vtfnvym06b100000gn/T/outline-file-task-real-45rvby11/project",
+  "real_models": true,
+  "real_mcp_stdio": true,
+  "github": "not used",
+  "runs": [
+    {
+      "name": "usage_report",
+      "run_id": "a3a5fcadfd0a4c83817d77310d00cc14",
+      "directory": "/Users/sergey/ai/aichallenge/aichallenge31/.task-runs/real-day34/a3a5fcadfd0a4c83817d77310d00cc14",
+      "status": "failed",
+      "dry_run_unchanged": true,
+      "read_files": [],
+      "tool_sequence": [],
+      "limitations": [
+        "Ошибка MCP: MCP search_text: Error executing tool search_text: Use a literal query of 1–200 characters and a bounded limit.. Проверьте repo_path, Git и установку пакета; при необходимости увеличьте mcp_timeout."
+      ]
+    },
+    {
+      "name": "docs_update",
+      "run_id": "ea06eaa719ff45a7bc32e504c547e484",
+      "directory": "/Users/sergey/ai/aichallenge/aichallenge31/.task-runs/real-day34/ea06eaa719ff45a7bc32e504c547e484",
+      "status": "conflict",
+      "dry_run_unchanged": true,
+      "read_files": [
+        "checks/paging.test.ts",
+        "docs/pagination.md",
+        "lib/paging/normalize.ts"
+      ],
+      "tool_sequence": [
+        "get_diff",
+        "search_context",
+        "read_file",
+        "read_file",
+        "read_file"
+      ],
+      "limitations": [
+        "Ошибка MCP: MCP propose_file_change: Error executing tool propose_file_change: conflict: expected_hash does not match current file.. Проверьте repo_path, Git и установку пакета; при необходимости увеличьте mcp_timeout."
+      ]
+    }
+  ],
+  "repeat_docs": {
+    "run_id": "3a51df08356648c6891115b93b00c013",
+    "status": "conflict",
+    "changes": [],
+    "project_unchanged": true,
+    "limitations": [
+      "Ошибка MCP: MCP propose_file_change: Error executing tool propose_file_change: conflict: expected_hash does not match current file.. Проверьте repo_path, Git и установку пакета; при необходимости увеличьте mcp_timeout."
+    ]
+  },
+  "finished": "2026-10-18T18:55:46.783344+00:00"
+}

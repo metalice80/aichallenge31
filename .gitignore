@@ -9,3 +9,5 @@ dist/
 .review-cache/
 .review-work/
 review-output/
+.task-runs/
+evaluation/day34/**/*.log

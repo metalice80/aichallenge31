@@ -53,3 +53,18 @@ class Ollama:
         if not result.get("message", {}).get("content"):
             raise AppError("Ollama вернула пустой ответ.")
         return result["message"]["content"]
+
+    def tool_chat(self, messages: list[dict], tools: list[dict]):
+        """Native Ollama tool calls; keep existing structured-answer API unchanged."""
+        result = self.request("/api/chat", {
+            "model": self.settings.chat_model, "messages": messages, "tools": tools,
+            "think": False, "stream": False,
+            "options": {"num_ctx": self.settings.num_ctx, "num_predict": self.settings.answer_tokens, "temperature": 0},
+        })
+        if result.get("done_reason") == "length":
+            raise AppError("Tool response reached answer_tokens; incomplete call discarded.")
+        message = result.get("message")
+        if not isinstance(message, dict):
+            raise AppError("Ollama: отсутствует tool message.")
+        # Never retain hidden thinking, even if a server unexpectedly returns it.
+        return {"role": "assistant", "content": message.get("content", ""), "tool_calls": message.get("tool_calls", [])}

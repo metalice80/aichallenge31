@@ -1,0 +1,85 @@
+{
+  "run_id": "3ab429297da54fb4b2c98051731f0f3d",
+  "goal": "Обнови существующую документацию по изменениям кода рабочей копии относительно HEAD. Сам посмотри diff, найди затронутое поведение и документы, прочитай связанный код и текущий текст, используй также смысловой поиск. Исправь только описание изменившегося поведения. Сохрани язык, структуру и несвязанные пользовательские правки. Новые Markdown-файлы не создавай.",
+  "status": "partial",
+  "directory": "/Users/sergey/ai/aichallenge/aichallenge31/.task-runs/docs-demo-fix/3ab429297da54fb4b2c98051731f0f3d",
+  "models": {
+    "qwen3:8b": {
+      "name": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+    },
+    "bge-m3": {
+      "name": "bge-m3:latest",
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+    }
+  },
+  "before": {
+    "identity": {
+      "root": "/Users/sergey/ai/aichallenge/outline",
+      "device": 16777232,
+      "inode": 13555965,
+      "head": "1024a2ef897741f2f8655940cb495679ef6306ca",
+      "branch": "demo-file-tasks-20261019-042619"
+    },
+    "status": " M server/main.ts\n",
+    "files": 2598,
+    "inventory_sha256": "9da41ae505d3810c76b9a5ff61528655fd03673288bd1032f3b860faeee4d5d2"
+  },
+  "after": {
+    "identity": {
+      "root": "/Users/sergey/ai/aichallenge/outline",
+      "device": 16777232,
+      "inode": 13555965,
+      "head": "1024a2ef897741f2f8655940cb495679ef6306ca",
+      "branch": "demo-file-tasks-20261019-042619"
+    },
+    "status": " M server/main.ts\n",
+    "files": 2598,
+    "inventory_sha256": "9da41ae505d3810c76b9a5ff61528655fd03673288bd1032f3b860faeee4d5d2"
+  },
+  "unchanged": true,
+  "limitations": [
+    "Model did not call tools to finish."
+  ],
+  "elapsed_seconds": 65.57664424998802,
+  "read_ranges": [
+    {
+      "path": "server/main.ts",
+      "start_line": 58,
+      "end_line": 66
+    },
+    {
+      "path": "README.md",
+      "start_line": 56,
+      "end_line": 62
+    }
+  ],
+  "tool_sequence": [
+    "get_diff",
+    "read_file",
+    "search_context",
+    "search_text",
+    "read_file",
+    "propose_file_change",
+    "preview_changes"
+  ],
+  "rag_stats": [
+    {
+      "embedded": 104,
+      "reused": 0,
+      "files": 22,
+      "eligible_files": 23,
+      "chunks": 104
+    }
+  ],
+  "changed_paths": [
+    "README.md"
+  ],
+  "patch": "--- a/README.md\n+++ b/README.md\n@@ -57,7 +57,7 @@\n \n In development Outline outputs simple logging to the console, prefixed by categories. In production it outputs JSON logs, these can be easily parsed by your preferred log ingestion pipeline.\n \n-HTTP logging is disabled by default, but can be enabled by setting the `DEBUG=http` environment variable. logging\n+HTTP logging is disabled by default, but can be enabled by setting the `DEBUG=http` environment variable or by setting `isDevelopment` to `true` in the environment. Logging\n can be enabled for all categories by setting `DEBUG=*` or for specific categories such as `DEBUG=database` and `LOG_LEVEL=debug`, or `LOG_LEVEL=silly` for very verbose logging.\n \n ## Tests\n",
+  "demo_checks": {
+    "only_readme": true,
+    "debugging_changed": true,
+    "other_sections_preserved": true,
+    "outdated_sentence_removed": true
+  }
+}

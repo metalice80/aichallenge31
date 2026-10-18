@@ -1,0 +1,39 @@
+{
+  "run_id": "c69c25adecd040819217af356ffa40a6",
+  "status": "failed",
+  "directory": "/Users/sergey/ai/aichallenge/aichallenge31/.task-runs/usage-demo-fix/c69c25adecd040819217af356ffa40a6",
+  "models": {},
+  "before": {
+    "identity": {
+      "root": "/Users/sergey/ai/aichallenge/outline",
+      "device": 16777232,
+      "inode": 13555965,
+      "head": "1024a2ef897741f2f8655940cb495679ef6306ca",
+      "branch": "demo-file-tasks-20261019-031549"
+    },
+    "status": "",
+    "files": 2598,
+    "inventory_sha256": "1b03ce1ab9170f5818b92cf4ee7ecca10a41e222fd70b72f46ac9dcaf9c0f6cf"
+  },
+  "after": {
+    "identity": {
+      "root": "/Users/sergey/ai/aichallenge/outline",
+      "device": 16777232,
+      "inode": 13555965,
+      "head": "1024a2ef897741f2f8655940cb495679ef6306ca",
+      "branch": "demo-file-tasks-20261019-031549"
+    },
+    "status": "",
+    "files": 2598,
+    "inventory_sha256": "1b03ce1ab9170f5818b92cf4ee7ecca10a41e222fd70b72f46ac9dcaf9c0f6cf"
+  },
+  "unchanged": true,
+  "limitations": [
+    "Ollama недоступна или отклонила запрос: [Errno 1] Operation not permitted. Проверьте ollama serve, адрес и модели; при превышении контекста уменьшите chunk_chars."
+  ],
+  "elapsed_seconds": 0.0038179999974090606,
+  "read_ranges": [],
+  "tool_sequence": [],
+  "rag_stats": [],
+  "changed_paths": []
+}

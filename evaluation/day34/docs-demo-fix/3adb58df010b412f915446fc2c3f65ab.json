@@ -1,0 +1,89 @@
+{
+  "run_id": "3adb58df010b412f915446fc2c3f65ab",
+  "goal": "Обнови существующую документацию по изменениям кода рабочей копии относительно HEAD. Сам посмотри diff, найди затронутое поведение и документы, прочитай связанный код и текущий текст, используй также смысловой поиск. Исправь только описание изменившегося поведения. Сохрани язык, структуру и несвязанные пользовательские правки. Новые Markdown-файлы не создавай.",
+  "status": "partial",
+  "directory": "/Users/sergey/ai/aichallenge/aichallenge31/.task-runs/docs-demo-fix/3adb58df010b412f915446fc2c3f65ab",
+  "models": {
+    "qwen3:8b": {
+      "name": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+    },
+    "bge-m3": {
+      "name": "bge-m3:latest",
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+    }
+  },
+  "before": {
+    "identity": {
+      "root": "/Users/sergey/ai/aichallenge/outline",
+      "device": 16777232,
+      "inode": 13555965,
+      "head": "1024a2ef897741f2f8655940cb495679ef6306ca",
+      "branch": "demo-file-tasks-20261019-042619"
+    },
+    "status": " M server/main.ts\n",
+    "files": 2598,
+    "inventory_sha256": "9da41ae505d3810c76b9a5ff61528655fd03673288bd1032f3b860faeee4d5d2"
+  },
+  "after": {
+    "identity": {
+      "root": "/Users/sergey/ai/aichallenge/outline",
+      "device": 16777232,
+      "inode": 13555965,
+      "head": "1024a2ef897741f2f8655940cb495679ef6306ca",
+      "branch": "demo-file-tasks-20261019-042619"
+    },
+    "status": " M server/main.ts\n",
+    "files": 2598,
+    "inventory_sha256": "9da41ae505d3810c76b9a5ff61528655fd03673288bd1032f3b860faeee4d5d2"
+  },
+  "unchanged": true,
+  "limitations": [
+    "MCP propose_file_change: Error executing tool propose_file_change: Editing requires read_file of EXACT old_text; copy punctuation, whitespace and Markdown bullet prefixes. Prefer one short unique sentence. Use old_text/new_text, not content."
+  ],
+  "elapsed_seconds": 78.10307224999997,
+  "read_ranges": [
+    {
+      "path": "server/main.ts",
+      "start_line": 58,
+      "end_line": 66
+    },
+    {
+      "path": "README.md",
+      "start_line": 56,
+      "end_line": 62
+    },
+    {
+      "path": "app/utils/Desktop.ts",
+      "start_line": 10,
+      "end_line": 12
+    }
+  ],
+  "tool_sequence": [
+    "get_diff",
+    "read_file",
+    "search_text",
+    "search_context",
+    "read_file",
+    "preview_changes",
+    "search_text",
+    "read_file"
+  ],
+  "rag_stats": [
+    {
+      "embedded": 104,
+      "reused": 0,
+      "files": 22,
+      "eligible_files": 23,
+      "chunks": 104
+    }
+  ],
+  "changed_paths": [],
+  "patch": "",
+  "demo_checks": {
+    "only_readme": false,
+    "debugging_changed": false,
+    "other_sections_preserved": false,
+    "outdated_sentence_removed": false
+  }
+}

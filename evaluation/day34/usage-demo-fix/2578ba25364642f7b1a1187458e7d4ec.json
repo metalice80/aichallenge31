@@ -1,0 +1,89 @@
+{
+  "run_id": "2578ba25364642f7b1a1187458e7d4ec",
+  "goal": "Добавь в docs/ARCHITECTURE.md раздел Shallow equality usage на английском. Сначала найди shallowEqual через search_text с glob **/*. ВАЖНО: код читай только короткими окнами: для каждого номера L в matched_lines отдельно вызови read_file от max(1,L-5) до L+5. Не объединяй далёкие совпадения в один диапазон. Найди и прочитай тело определения. Сделай один search_context, ограничив glob найденным файлом. Прочитай docs/ARCHITECTURE.md. Подготовь таблицу реальных вызовов: File:line | Purpose, и одно предложение об ограничениях поиска. Добавь её перед заголовком ## Frontend: в propose_file_change old_text должен быть ровно ## Frontend, new_text — новый раздел, затем пустая строка и ## Frontend. expected_hash возьми из чтения документа, sources — ID прочитанных исходников. Сохрани остальной документ, новые файлы не создавай. Выполни preview_changes и finish_task.",
+  "status": "prepared",
+  "directory": "/Users/sergey/ai/aichallenge/aichallenge31/.task-runs/usage-demo-fix/2578ba25364642f7b1a1187458e7d4ec",
+  "models": {
+    "qwen3:8b": {
+      "name": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+    },
+    "bge-m3": {
+      "name": "bge-m3:latest",
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+    }
+  },
+  "before": {
+    "identity": {
+      "root": "/Users/sergey/ai/aichallenge/outline",
+      "device": 16777232,
+      "inode": 13555965,
+      "head": "1024a2ef897741f2f8655940cb495679ef6306ca",
+      "branch": "demo-file-tasks-20261019-034859"
+    },
+    "status": "",
+    "files": 2598,
+    "inventory_sha256": "1b03ce1ab9170f5818b92cf4ee7ecca10a41e222fd70b72f46ac9dcaf9c0f6cf"
+  },
+  "after": {
+    "identity": {
+      "root": "/Users/sergey/ai/aichallenge/outline",
+      "device": 16777232,
+      "inode": 13555965,
+      "head": "1024a2ef897741f2f8655940cb495679ef6306ca",
+      "branch": "demo-file-tasks-20261019-034859"
+    },
+    "status": "",
+    "files": 2598,
+    "inventory_sha256": "1b03ce1ab9170f5818b92cf4ee7ecca10a41e222fd70b72f46ac9dcaf9c0f6cf"
+  },
+  "unchanged": true,
+  "limitations": [],
+  "elapsed_seconds": 75.34993629198289,
+  "read_ranges": [
+    {
+      "path": "shared/utils/shallowEqual.ts",
+      "start_line": 10,
+      "end_line": 20
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "start_line": 1,
+      "end_line": 68
+    },
+    {
+      "path": "shared/utils/collections.ts",
+      "start_line": 1,
+      "end_line": 20
+    },
+    {
+      "path": "app/hooks/useActionContext.tsx",
+      "start_line": 1,
+      "end_line": 20
+    }
+  ],
+  "tool_sequence": [
+    "list_files",
+    "search_text",
+    "read_file",
+    "search_context",
+    "read_file",
+    "read_file",
+    "read_file",
+    "propose_file_change",
+    "preview_changes",
+    "finish_task"
+  ],
+  "rag_stats": [
+    {
+      "embedded": 4,
+      "reused": 0,
+      "files": 1,
+      "eligible_files": 1,
+      "chunks": 4
+    }
+  ],
+  "changed_paths": [
+    "docs/ARCHITECTURE.md"
+  ]
+}

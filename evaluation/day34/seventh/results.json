@@ -1,0 +1,138 @@
+{
+  "started": "2026-10-18T19:17:43.055586+00:00",
+  "root": "/var/folders/w0/k5bqhg0d4795vtfnvym06b100000gn/T/outline-file-task-real-1cunhln1/project",
+  "real_models": true,
+  "real_mcp_stdio": true,
+  "github": "not used",
+  "config": "/var/folders/w0/k5bqhg0d4795vtfnvym06b100000gn/T/outline-file-task-real-1cunhln1/fixture.toml",
+  "runs": [
+    {
+      "name": "usage_report",
+      "root": "/var/folders/w0/k5bqhg0d4795vtfnvym06b100000gn/T/outline-file-task-real-1cunhln1/project",
+      "config": "/var/folders/w0/k5bqhg0d4795vtfnvym06b100000gn/T/outline-file-task-real-1cunhln1/fixture.toml",
+      "run_id": "a3570d7e969e47fea37f6d38c0923a6a",
+      "directory": "/Users/sergey/ai/aichallenge/aichallenge31/.task-runs/real-day34/a3570d7e969e47fea37f6d38c0923a6a",
+      "status": "prepared",
+      "dry_run_unchanged": true,
+      "read_files": [
+        "checks/paging.test.ts",
+        "client/table.ts",
+        "docs/pagination.md",
+        "lib/paging/normalize.ts"
+      ],
+      "tool_sequence": [
+        "search_text",
+        "search_context",
+        "list_files",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "propose_file_change",
+        "preview_changes",
+        "finish_task"
+      ],
+      "limitations": [],
+      "apply": {
+        "status": "applied",
+        "run_id": "a3570d7e969e47fea37f6d38c0923a6a",
+        "no_op": false,
+        "paths": [
+          "reports/normalizePageSize.md"
+        ]
+      },
+      "replay_without_llm": {
+        "status": "applied",
+        "run_id": "a3570d7e969e47fea37f6d38c0923a6a",
+        "no_op": true
+      },
+      "cli_replay_unavailable_ollama": {
+        "exit_code": 0,
+        "stdout": "{\"status\": \"applied\", \"run_id\": \"a3570d7e969e47fea37f6d38c0923a6a\", \"no_op\": true}",
+        "stderr": ""
+      },
+      "changed_paths": [
+        "reports/normalizePageSize.md"
+      ],
+      "sources_unchanged": true
+    },
+    {
+      "name": "docs_update",
+      "root": "/var/folders/w0/k5bqhg0d4795vtfnvym06b100000gn/T/outline-docs-task-real-7vja5y78/project",
+      "config": "/var/folders/w0/k5bqhg0d4795vtfnvym06b100000gn/T/outline-docs-task-real-7vja5y78/fixture.toml",
+      "run_id": "6fb8892c6be44d3dabd437e4bafbd3ea",
+      "directory": "/Users/sergey/ai/aichallenge/aichallenge31/.task-runs/real-day34/6fb8892c6be44d3dabd437e4bafbd3ea",
+      "status": "prepared",
+      "dry_run_unchanged": true,
+      "read_files": [
+        "docs/pagination.md",
+        "lib/paging/normalize.ts"
+      ],
+      "tool_sequence": [
+        "get_diff",
+        "search_context",
+        "read_file",
+        "search_text",
+        "search_context",
+        "read_file",
+        "read_file",
+        "read_file",
+        "search_text",
+        "read_file",
+        "read_file",
+        "read_file",
+        "propose_file_change",
+        "preview_changes",
+        "finish_task"
+      ],
+      "limitations": [],
+      "source_conflict": {
+        "status": "conflict",
+        "run_id": "6fb8892c6be44d3dabd437e4bafbd3ea",
+        "error": "conflict: source or target changed: lib/paging/normalize.ts"
+      },
+      "apply": {
+        "status": "applied",
+        "run_id": "6fb8892c6be44d3dabd437e4bafbd3ea",
+        "no_op": false,
+        "paths": [
+          "docs/pagination.md"
+        ]
+      },
+      "replay_without_llm": {
+        "status": "applied",
+        "run_id": "6fb8892c6be44d3dabd437e4bafbd3ea",
+        "no_op": true
+      },
+      "cli_replay_unavailable_ollama": {
+        "exit_code": 0,
+        "stdout": "{\"status\": \"applied\", \"run_id\": \"6fb8892c6be44d3dabd437e4bafbd3ea\", \"no_op\": true}",
+        "stderr": ""
+      },
+      "changed_paths": [
+        "docs/pagination.md"
+      ],
+      "sources_unchanged": true,
+      "meaning_updated": true
+    }
+  ],
+  "docs_root": "/var/folders/w0/k5bqhg0d4795vtfnvym06b100000gn/T/outline-docs-task-real-7vja5y78/project",
+  "docs_config": "/var/folders/w0/k5bqhg0d4795vtfnvym06b100000gn/T/outline-docs-task-real-7vja5y78/fixture.toml",
+  "repeat_docs": {
+    "run_id": "75314f20342a4ebf97c19fe0f05633af",
+    "status": "no_changes",
+    "changes": [],
+    "project_unchanged": true,
+    "limitations": []
+  },
+  "cli_apply": {
+    "exit_code": 1,
+    "stdout": "Задача: partial; run_id: dc9c938c2b3441558363c2201f1b0d9f; артефакты: /Users/sergey/ai/aichallenge/aichallenge31/.task-runs/real-day34/dc9c938c2b3441558363c2201f1b0d9f",
+    "stderr": "Task dc9c938c2b3441558363c2201f1b0d9f: HEAD → working tree; apply requested\nMCP search_text\nMCP search_context\nMCP read_file: docs/pagination.md\nMCP read_file: docs/pagination.md\nMCP read_file: docs/pagination.md\nMCP search_text\nMCP search_context\nMCP search_text\nMCP search_context\nMCP list_files\nMCP list_files\nMCP list_files\nTask dc9c938c2b3441558363c2201f1b0d9f: partial; /Users/sergey/ai/aichallenge/aichallenge31/.task-runs/real-day34/dc9c938c2b3441558363c2201f1b0d9f/changes.patch",
+    "run_ids": [
+      "dc9c938c2b3441558363c2201f1b0d9f"
+    ],
+    "meaning_updated": false
+  },
+  "finished": "2026-10-18T19:19:43.967225+00:00"
+}

@@ -1,0 +1,47 @@
+{
+  "run_id": "a0ce7e2b488d4b31bb0232ead1a8c041",
+  "goal": "Обнови существующую документацию по изменениям кода рабочей копии относительно HEAD. Сам посмотри diff, найди затронутое поведение и документы, прочитай связанный код и текущий текст, используй также смысловой поиск. Исправь только описание изменившегося поведения. Сохрани язык, структуру и несвязанные пользовательские правки. Новые Markdown-файлы не создавай.",
+  "status": "failed",
+  "directory": "/Users/sergey/ai/aichallenge/aichallenge31/.task-runs/docs-demo-fix/a0ce7e2b488d4b31bb0232ead1a8c041",
+  "models": {},
+  "before": {
+    "identity": {
+      "root": "/Users/sergey/ai/aichallenge/outline",
+      "device": 16777232,
+      "inode": 13555965,
+      "head": "1024a2ef897741f2f8655940cb495679ef6306ca",
+      "branch": "demo-file-tasks-20261019-042619"
+    },
+    "status": " M server/main.ts\n",
+    "files": 2598,
+    "inventory_sha256": "9da41ae505d3810c76b9a5ff61528655fd03673288bd1032f3b860faeee4d5d2"
+  },
+  "after": {
+    "identity": {
+      "root": "/Users/sergey/ai/aichallenge/outline",
+      "device": 16777232,
+      "inode": 13555965,
+      "head": "1024a2ef897741f2f8655940cb495679ef6306ca",
+      "branch": "demo-file-tasks-20261019-042619"
+    },
+    "status": " M server/main.ts\n",
+    "files": 2598,
+    "inventory_sha256": "9da41ae505d3810c76b9a5ff61528655fd03673288bd1032f3b860faeee4d5d2"
+  },
+  "unchanged": true,
+  "limitations": [
+    "Ollama недоступна или отклонила запрос: [Errno 1] Operation not permitted. Проверьте ollama serve, адрес и модели; при превышении контекста уменьшите chunk_chars."
+  ],
+  "elapsed_seconds": 0.0034024579799734056,
+  "read_ranges": [],
+  "tool_sequence": [],
+  "rag_stats": [],
+  "changed_paths": [],
+  "patch": "",
+  "demo_checks": {
+    "only_readme": false,
+    "debugging_changed": false,
+    "other_sections_preserved": false,
+    "outdated_sentence_removed": false
+  }
+}

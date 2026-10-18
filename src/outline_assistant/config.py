@@ -51,9 +51,43 @@ class Settings:
     publish_enabled: bool = False
     publication_author: str = "github-actions[bot]"
 
+    task_runs_dir: Path = Path(".task-runs")
+    task_read_include: tuple[str, ...] = ("**/*.md", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.py", "**/*.json")
+    task_write_include: tuple[str, ...] = ("README.md", "docs/**/*.md", "reports/**/*.md")
+    task_max_steps: int = 32
+    task_max_calls: int = 80
+    task_timeout: float = 600.0
+    task_tool_timeout: float = 180.0
+    task_max_files: int = 10000
+    task_max_file_bytes: int = 200000
+    task_max_read_bytes: int = 300000
+    task_max_result_bytes: int = 12000
+    task_max_search_results: int = 30
+    task_max_search_bytes: int = 50000000
+    task_max_changes: int = 8
+    task_max_change_bytes: int = 80000
+    task_rag_files: int = 40
+    task_max_errors: int = 4
+
     def __post_init__(self):
-        for name in ("repo_path", "index_dir", "review_git_dir", "review_index_dir"):
+        for name in ("repo_path", "index_dir", "review_git_dir", "review_index_dir", "task_runs_dir"):
             object.__setattr__(self, name, Path(getattr(self, name)).expanduser().resolve())
+        for name in ("task_read_include", "task_write_include"):
+            rules = getattr(self, name)
+            if not isinstance(rules, (tuple, list)) or not rules or any(not isinstance(p, str) or p.startswith("/") or ".." in p.split("/") or "\\" in p for p in rules):
+                raise AppError(f"{name}: нужны относительные шаблоны.")
+            if name == "task_write_include" and any(not p.endswith(".md") for p in rules):
+                raise AppError("Запись task разрешена только в Markdown.")
+            object.__setattr__(self, name, tuple(rules))
+        for directory in (self.repo_path, self.index_dir, self.review_git_dir, self.review_index_dir):
+            if self.task_runs_dir.is_relative_to(directory) or directory.is_relative_to(self.task_runs_dir):
+                raise AppError("task_runs_dir должен быть отдельно от проекта и индексов.")
+        for name in ("task_max_steps", "task_max_calls", "task_max_files", "task_max_file_bytes", "task_max_read_bytes", "task_max_result_bytes", "task_max_search_results", "task_max_search_bytes", "task_max_changes", "task_max_change_bytes", "task_rag_files", "task_max_errors"):
+            if type(getattr(self, name)) is not int or getattr(self, name) < 1:
+                raise AppError(f"{name} должен быть положительным целым числом.")
+        for name in ("task_timeout", "task_tool_timeout"):
+            if not 0 < getattr(self, name) <= 3600:
+                raise AppError(f"{name} должен быть в интервале (0, 3600].")
         if not isinstance(self.include, (tuple, list)) or not isinstance(self.review_code_include, (tuple, list)):
             raise AppError("include и review_code_include должны быть списками шаблонов.")
         object.__setattr__(self, "include", tuple(self.include))
@@ -103,7 +137,7 @@ def load_settings(path: str | None = None) -> Settings:
         return Settings()
     try:
         data = tomllib.loads(config.read_text())
-        for name in ("repo_path", "index_dir", "review_git_dir", "review_index_dir"):
+        for name in ("repo_path", "index_dir", "review_git_dir", "review_index_dir", "task_runs_dir"):
             if name in data:
                 data[name] = config.parent / Path(data[name]).expanduser()
         return Settings(**data)

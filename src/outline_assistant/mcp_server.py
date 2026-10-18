@@ -10,7 +10,7 @@ from mcp.server.fastmcp import FastMCP
 from .documents import safe_files
 
 
-def create_server(root: Path, timeout: float = 10.0, review_settings=None):
+def create_server(root: Path, timeout: float = 10.0, review_settings=None, task_settings=None, task_run_id=None):
     server = FastMCP("outline-read-only", log_level="WARNING")
     root = root.resolve()
 
@@ -51,6 +51,12 @@ def create_server(root: Path, timeout: float = 10.0, review_settings=None):
         from .review_mcp import register_review_tools
         register_review_tools(server, review_settings)
 
+    if task_settings is not None:
+        if review_settings is not None:
+            raise ValueError("Task and PR review sessions cannot be combined.")
+        from .task_mcp import register_task_tools
+        register_task_tools(server, task_settings, task_run_id)
+
     return server
 
 
@@ -63,7 +69,9 @@ def main():
     from .config import Settings
     data = os.environ.get("OUTLINE_REVIEW_SETTINGS")
     review_settings = Settings(**json.loads(data)) if data else None
-    create_server(args.repo, args.git_timeout, review_settings).run(transport="stdio")
+    task_data = os.environ.get("OUTLINE_TASK_SETTINGS")
+    task_settings = Settings(**json.loads(task_data)) if task_data else None
+    create_server(args.repo, args.git_timeout, review_settings, task_settings, os.environ.get("OUTLINE_TASK_RUN_ID")).run(transport="stdio")
 
 
 if __name__ == "__main__":

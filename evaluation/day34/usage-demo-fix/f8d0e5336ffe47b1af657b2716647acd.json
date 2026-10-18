@@ -1,0 +1,92 @@
+{
+  "run_id": "f8d0e5336ffe47b1af657b2716647acd",
+  "status": "no_changes",
+  "directory": "/Users/sergey/ai/aichallenge/aichallenge31/.task-runs/usage-demo-fix/f8d0e5336ffe47b1af657b2716647acd",
+  "models": {
+    "qwen3:8b": {
+      "name": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+    },
+    "bge-m3": {
+      "name": "bge-m3:latest",
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+    }
+  },
+  "before": {
+    "identity": {
+      "root": "/Users/sergey/ai/aichallenge/outline",
+      "device": 16777232,
+      "inode": 13555965,
+      "head": "1024a2ef897741f2f8655940cb495679ef6306ca",
+      "branch": "demo-file-tasks-20261019-031549"
+    },
+    "status": "",
+    "files": 2598,
+    "inventory_sha256": "1b03ce1ab9170f5818b92cf4ee7ecca10a41e222fd70b72f46ac9dcaf9c0f6cf"
+  },
+  "after": {
+    "identity": {
+      "root": "/Users/sergey/ai/aichallenge/outline",
+      "device": 16777232,
+      "inode": 13555965,
+      "head": "1024a2ef897741f2f8655940cb495679ef6306ca",
+      "branch": "demo-file-tasks-20261019-031549"
+    },
+    "status": "",
+    "files": 2598,
+    "inventory_sha256": "1b03ce1ab9170f5818b92cf4ee7ecca10a41e222fd70b72f46ac9dcaf9c0f6cf"
+  },
+  "unchanged": true,
+  "limitations": [],
+  "elapsed_seconds": 62.06646641698899,
+  "read_ranges": [
+    {
+      "path": "app/hooks/useActionContext.tsx",
+      "start_line": 5,
+      "end_line": 204
+    },
+    {
+      "path": "shared/utils/collections.ts",
+      "start_line": 2,
+      "end_line": 37
+    },
+    {
+      "path": "shared/utils/shallowEqual.ts",
+      "start_line": 10,
+      "end_line": 10
+    },
+    {
+      "path": "shared/utils/shallowEqual.ts",
+      "start_line": 10,
+      "end_line": 24
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "start_line": 1,
+      "end_line": 68
+    }
+  ],
+  "tool_sequence": [
+    "search_text",
+    "read_file",
+    "read_file",
+    "read_file",
+    "search_context",
+    "read_file",
+    "search_text",
+    "list_files",
+    "read_file",
+    "preview_changes",
+    "finish_task"
+  ],
+  "rag_stats": [
+    {
+      "embedded": 4,
+      "reused": 0,
+      "files": 1,
+      "eligible_files": 1,
+      "chunks": 4
+    }
+  ],
+  "changed_paths": []
+}

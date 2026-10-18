@@ -1,0 +1,135 @@
+{
+  "started": "2026-10-18T19:12:48.450002+00:00",
+  "root": "/var/folders/w0/k5bqhg0d4795vtfnvym06b100000gn/T/outline-file-task-real-pq8bkhzp/project",
+  "real_models": true,
+  "real_mcp_stdio": true,
+  "github": "not used",
+  "config": "/var/folders/w0/k5bqhg0d4795vtfnvym06b100000gn/T/outline-file-task-real-pq8bkhzp/fixture.toml",
+  "runs": [
+    {
+      "name": "usage_report",
+      "run_id": "daaaffb0b0be4bbb9dac35a3bbbae24a",
+      "directory": "/Users/sergey/ai/aichallenge/aichallenge31/.task-runs/real-day34/daaaffb0b0be4bbb9dac35a3bbbae24a",
+      "status": "prepared",
+      "dry_run_unchanged": true,
+      "read_files": [
+        "checks/paging.test.ts",
+        "client/table.ts",
+        "docs/pagination.md",
+        "lib/paging/normalize.ts"
+      ],
+      "tool_sequence": [
+        "search_text",
+        "search_context",
+        "list_files",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "propose_file_change",
+        "preview_changes",
+        "finish_task"
+      ],
+      "limitations": [],
+      "apply": {
+        "status": "applied",
+        "run_id": "daaaffb0b0be4bbb9dac35a3bbbae24a",
+        "no_op": false,
+        "paths": [
+          "reports/normalizePageSize.md"
+        ]
+      },
+      "replay_without_llm": {
+        "status": "applied",
+        "run_id": "daaaffb0b0be4bbb9dac35a3bbbae24a",
+        "no_op": true
+      },
+      "cli_replay_unavailable_ollama": {
+        "exit_code": 0,
+        "stdout": "{\"status\": \"applied\", \"run_id\": \"daaaffb0b0be4bbb9dac35a3bbbae24a\", \"no_op\": true}",
+        "stderr": ""
+      },
+      "changed_paths": [
+        "reports/normalizePageSize.md"
+      ],
+      "sources_unchanged": true
+    },
+    {
+      "name": "docs_update",
+      "run_id": "90754d9a5eea4bd1a6c3e4b364c3f764",
+      "directory": "/Users/sergey/ai/aichallenge/aichallenge31/.task-runs/real-day34/90754d9a5eea4bd1a6c3e4b364c3f764",
+      "status": "prepared",
+      "dry_run_unchanged": true,
+      "read_files": [
+        "checks/paging.test.ts",
+        "docs/pagination.md",
+        "lib/paging/normalize.ts",
+        "reports/normalizePageSize.md"
+      ],
+      "tool_sequence": [
+        "get_diff",
+        "search_context",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "read_file",
+        "propose_file_change",
+        "read_file",
+        "propose_file_change",
+        "preview_changes",
+        "finish_task"
+      ],
+      "limitations": [],
+      "source_conflict": {
+        "status": "conflict",
+        "run_id": "90754d9a5eea4bd1a6c3e4b364c3f764",
+        "error": "conflict: source or target changed: lib/paging/normalize.ts"
+      },
+      "apply": {
+        "status": "applied",
+        "run_id": "90754d9a5eea4bd1a6c3e4b364c3f764",
+        "no_op": false,
+        "paths": [
+          "reports/normalizePageSize.md"
+        ]
+      },
+      "replay_without_llm": {
+        "status": "applied",
+        "run_id": "90754d9a5eea4bd1a6c3e4b364c3f764",
+        "no_op": true
+      },
+      "cli_replay_unavailable_ollama": {
+        "exit_code": 0,
+        "stdout": "{\"status\": \"applied\", \"run_id\": \"90754d9a5eea4bd1a6c3e4b364c3f764\", \"no_op\": true}",
+        "stderr": ""
+      },
+      "changed_paths": [
+        "reports/normalizePageSize.md"
+      ],
+      "sources_unchanged": true,
+      "meaning_updated": false
+    }
+  ],
+  "repeat_docs": {
+    "run_id": "16ed1f2088694f0eac5ec66831f6c209",
+    "status": "no_changes",
+    "changes": [],
+    "project_unchanged": true,
+    "limitations": []
+  },
+  "cli_apply": {
+    "exit_code": 1,
+    "stdout": "Задача: failed; run_id: f281eeb07e824aa5809646c8681856b7; артефакты: /Users/sergey/ai/aichallenge/aichallenge31/.task-runs/real-day34/f281eeb07e824aa5809646c8681856b7",
+    "stderr": "Task f281eeb07e824aa5809646c8681856b7: HEAD → working tree; apply requested\nMCP search_text\nMCP search_context\nMCP list_files\nMCP list_files\nMCP list_files\nTask f281eeb07e824aa5809646c8681856b7: failed; /Users/sergey/ai/aichallenge/aichallenge31/.task-runs/real-day34/f281eeb07e824aa5809646c8681856b7/changes.patch",
+    "run_ids": [
+      "f281eeb07e824aa5809646c8681856b7"
+    ],
+    "meaning_updated": false
+  },
+  "finished": "2026-10-18T19:17:16.810096+00:00"
+}

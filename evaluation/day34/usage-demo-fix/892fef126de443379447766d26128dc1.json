@@ -1,0 +1,82 @@
+{
+  "run_id": "892fef126de443379447766d26128dc1",
+  "goal": "Найди прямые импорты shallowEqual: вызови search_text с query=\"import shallowEqual\" и glob=\"**/*\". Прочитай по 10 строк вокруг каждого найденного импорта. Проверь связь одним search_context с glob конкретного найденного файла. Прочитай docs/ARCHITECTURE.md. Добавь таблицу File:line | Import с одной строкой на каждый найденный файл под новым заголовком ShallowEqual imports. Для propose_file_change используй old_text ровно \"## Frontend\", new_text — тот же заголовок, затем пустая строка, \"### ShallowEqual imports\" и таблица. expected_hash возьми из чтения документа, sources — ID чтений исходников. Сохрани остальной документ. Новые файлы не создавай. Вызови preview_changes и finish_task. Это обзор прямых импортов; искать все вызовы и алиасы не нужно.",
+  "status": "prepared",
+  "directory": "/Users/sergey/ai/aichallenge/aichallenge31/.task-runs/usage-demo-fix/892fef126de443379447766d26128dc1",
+  "models": {
+    "qwen3:8b": {
+      "name": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+    },
+    "bge-m3": {
+      "name": "bge-m3:latest",
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+    }
+  },
+  "before": {
+    "identity": {
+      "root": "/Users/sergey/ai/aichallenge/outline",
+      "device": 16777232,
+      "inode": 13555965,
+      "head": "1024a2ef897741f2f8655940cb495679ef6306ca",
+      "branch": "demo-file-tasks-20261019-034859"
+    },
+    "status": "",
+    "files": 2598,
+    "inventory_sha256": "1b03ce1ab9170f5818b92cf4ee7ecca10a41e222fd70b72f46ac9dcaf9c0f6cf"
+  },
+  "after": {
+    "identity": {
+      "root": "/Users/sergey/ai/aichallenge/outline",
+      "device": 16777232,
+      "inode": 13555965,
+      "head": "1024a2ef897741f2f8655940cb495679ef6306ca",
+      "branch": "demo-file-tasks-20261019-034859"
+    },
+    "status": "",
+    "files": 2598,
+    "inventory_sha256": "1b03ce1ab9170f5818b92cf4ee7ecca10a41e222fd70b72f46ac9dcaf9c0f6cf"
+  },
+  "unchanged": true,
+  "limitations": [],
+  "elapsed_seconds": 32.20234520800295,
+  "read_ranges": [
+    {
+      "path": "app/hooks/useActionContext.tsx",
+      "start_line": 1,
+      "end_line": 10
+    },
+    {
+      "path": "shared/utils/collections.ts",
+      "start_line": 1,
+      "end_line": 10
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "start_line": 1,
+      "end_line": 10
+    }
+  ],
+  "tool_sequence": [
+    "search_text",
+    "read_file",
+    "read_file",
+    "search_context",
+    "read_file",
+    "propose_file_change",
+    "preview_changes",
+    "finish_task"
+  ],
+  "rag_stats": [
+    {
+      "embedded": 68,
+      "reused": 0,
+      "files": 1,
+      "eligible_files": 1,
+      "chunks": 69
+    }
+  ],
+  "changed_paths": [
+    "docs/ARCHITECTURE.md"
+  ]
+}

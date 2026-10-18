@@ -38,3 +38,22 @@ review_keep_days = 14
 publish_enabled = false
 publication_author = "github-actions[bot]"
 # GITHUB_TOKEN is read ONLY from the environment; never put it here.
+
+# File tasks: separate overlay and artifacts; no project writes without --apply/apply-run.
+task_runs_dir = ".task-runs"
+task_read_include = ["**/*.md", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.py", "**/*.json"]
+task_write_include = ["README.md", "docs/**/*.md", "reports/**/*.md"]
+task_max_steps = 32
+task_max_calls = 80
+task_timeout = 600.0
+task_tool_timeout = 180.0
+task_max_files = 10000
+task_max_file_bytes = 200000
+task_max_read_bytes = 300000
+task_max_result_bytes = 12000
+task_max_search_results = 30
+task_max_search_bytes = 50000000
+task_max_changes = 8
+task_max_change_bytes = 80000
+task_rag_files = 40
+task_max_errors = 4
