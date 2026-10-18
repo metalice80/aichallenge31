@@ -1,0 +1,109 @@
+SCENARIO obvious_bug: real Ollama, real MCP, fixture API
+MCP: получаю PR и фиксирую SHA…
+RAG head: 11 файлов…
+Review embeddings: 1–8 / 105
+Review embeddings: 9–16 / 105
+Review embeddings: 17–24 / 105
+Review embeddings: 25–32 / 105
+Review embeddings: 33–40 / 105
+Review embeddings: 41–48 / 105
+Review embeddings: 49–56 / 105
+Review embeddings: 57–64 / 105
+Review embeddings: 65–72 / 105
+Review embeddings: 73–80 / 105
+Review embeddings: 81–88 / 105
+Review embeddings: 89–96 / 105
+Review embeddings: 97–104 / 105
+Review embeddings: 105–105 / 105
+Qwen3: порция 1, shared/utils/shallowEqual.ts…
+SCENARIO breaking_contract: real Ollama, real MCP, fixture API
+MCP: получаю PR и фиксирую SHA…
+RAG head: 11 файлов…
+Review embeddings: 1–2 / 2
+Qwen3: порция 1, shared/utils/naturalSort.ts…
+SCENARIO safe_refactor: real Ollama, real MCP, fixture API
+MCP: получаю PR и фиксирую SHA…
+RAG head: 11 файлов…
+Review embeddings: 1–3 / 3
+Qwen3: порция 1, shared/utils/shallowEqual.ts…
+SCENARIO docs_only: real Ollama, real MCP, fixture API
+MCP: получаю PR и фиксирую SHA…
+RAG head: 11 файлов…
+Review embeddings: 1–1 / 1
+Qwen3: порция 1, docs/SERVICES.md…
+[
+  {
+    "name": "obvious_bug",
+    "path": "shared/utils/shallowEqual.ts",
+    "expectation": "Arrays of different lengths incorrectly compare equal; report bug at changed return.",
+    "status": "complete",
+    "finding_count": 1,
+    "observed_expected_presence": true,
+    "rag": {
+      "embedded": 105,
+      "reused": 0,
+      "files": 11,
+      "chunks": 115,
+      "snapshot_sha": "d0c5c8fbb744e7587be9425af04e9794cefb9ca3",
+      "limited": false
+    },
+    "limitations": [],
+    "report": "obvious_bug/review.json"
+  },
+  {
+    "name": "breaking_contract",
+    "path": "shared/utils/naturalSort.ts",
+    "expectation": "Existing string-key callers in collections.ts, GroupsStore.ts and naturalSort.test.ts become TypeScript-incompatible.",
+    "status": "complete",
+    "finding_count": 1,
+    "observed_expected_presence": true,
+    "rag": {
+      "embedded": 2,
+      "reused": 113,
+      "files": 11,
+      "chunks": 115,
+      "snapshot_sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+      "limited": false
+    },
+    "limitations": [
+      "Поиск определений/использований ограничен review_max_search_files и 12 результатами."
+    ],
+    "report": "breaking_contract/review.json"
+  },
+  {
+    "name": "safe_refactor",
+    "path": "shared/utils/shallowEqual.ts",
+    "expectation": "Equivalent reference comparison; no bug/architecture finding expected.",
+    "status": "complete",
+    "finding_count": 1,
+    "observed_expected_presence": false,
+    "rag": {
+      "embedded": 3,
+      "reused": 114,
+      "files": 11,
+      "chunks": 117,
+      "snapshot_sha": "964486f77660406503f88d6eb86b4d3ca0165529",
+      "limited": false
+    },
+    "limitations": [],
+    "report": "safe_refactor/review.json"
+  },
+  {
+    "name": "docs_only",
+    "path": "docs/SERVICES.md",
+    "expectation": "Grammar correction only; no bug/architecture finding expected.",
+    "status": "complete",
+    "finding_count": 0,
+    "observed_expected_presence": true,
+    "rag": {
+      "embedded": 1,
+      "reused": 114,
+      "files": 11,
+      "chunks": 115,
+      "snapshot_sha": "ab60c94cf5e44a522d7b40954fd71bdbcef278ce",
+      "limited": false
+    },
+    "limitations": [],
+    "report": "docs_only/review.json"
+  }
+]

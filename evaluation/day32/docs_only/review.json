@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "repo": "metalice80/outline_t",
+  "number": 104,
+  "status": "complete",
+  "created_at": "2026-10-18T13:22:15.753041+00:00",
+  "assistant": {
+    "version": "0.2.0",
+    "code_sha256": "433370640b1a66fcc4b5373ac3a4c393ca5bbb97a43251feb8a21c2a3053148c"
+  },
+  "models": {
+    "bge-m3": {
+      "name": "bge-m3:latest",
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+    },
+    "qwen3:8b": {
+      "name": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+    }
+  },
+  "summary": "\u0412 PR \u0432\u043d\u0435\u0441\u0435\u043d\u044b \u0438\u0441\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u0432 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u044e, \u0432\u043a\u043b\u044e\u0447\u0430\u044f \u0438\u0441\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043e\u043f\u0435\u0447\u0430\u0442\u043a\u0438 \u0432 \u0441\u043b\u043e\u0432\u0435 'ran' \u043d\u0430 'run'. \u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u044f \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u043e \u043e\u0442\u0440\u0430\u0436\u0430\u0435\u0442 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f, \u0438 \u043d\u0435 \u043d\u0430\u0431\u043b\u044e\u0434\u0430\u0435\u0442\u0441\u044f \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u043e\u0448\u0438\u0431\u043e\u043a \u0438\u043b\u0438 \u0430\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u043d\u044b\u0445 \u043f\u0440\u043e\u0431\u043b\u0435\u043c.",
+  "pr": {
+    "number": 104,
+    "state": "open",
+    "title": "Update docs/SERVICES.md",
+    "body": "Local evaluation of an isolated source change.",
+    "draft": false,
+    "author": "metalice80",
+    "changed_files": 1,
+    "repo": "metalice80/outline_t",
+    "base_repo": "metalice80/outline_t",
+    "base_sha": "3b1e314cc5aa9bc40643cf9d89cca3c43f097a50",
+    "head_repo": "metalice80/outline_t",
+    "head_sha": "ab60c94cf5e44a522d7b40954fd71bdbcef278ce",
+    "merge_base_sha": "3b1e314cc5aa9bc40643cf9d89cca3c43f097a50"
+  },
+  "findings": [],
+  "sources": {
+    "S1": {
+      "path": "docs/SERVICES.md",
+      "sha": "3b1e314cc5aa9bc40643cf9d89cca3c43f097a50",
+      "start_line": 15,
+      "end_line": 37,
+      "text": "\nCurrently this service is only used in development to view and debug the queues.\nIt can be viewed at `/admin` when enabled.\n\n## Web\n\nThe web server hosts the Application and API, as such this is the main service\nand must be run by at least one process.\n\n## Websockets\n\nThe websocket server is used to communicate with the frontend, it can be ran on\nthe same box as the web server or separately.\n\n## Worker\n\nAt least one worker process is required to process the [queues](../server/queues).\n\n## Collaboration\n\nThe collaboration server coordinates all realtime editing and updating of documents,\nit can be ran on the same box as the web server or separately.\n\n",
+      "source_type": "documentation",
+      "symbol": "line-window",
+      "changed": true,
+      "fallback": false
+    },
+    "S2": {
+      "path": "docs/SERVICES.md",
+      "sha": "ab60c94cf5e44a522d7b40954fd71bdbcef278ce",
+      "start_line": 15,
+      "end_line": 37,
+      "text": "\nCurrently this service is only used in development to view and debug the queues.\nIt can be viewed at `/admin` when enabled.\n\n## Web\n\nThe web server hosts the Application and API, as such this is the main service\nand must be run by at least one process.\n\n## Websockets\n\nThe websocket server is used to communicate with the frontend, it can be run on\nthe same box as the web server or separately.\n\n## Worker\n\nAt least one worker process is required to process the [queues](../server/queues).\n\n## Collaboration\n\nThe collaboration server coordinates all realtime editing and updating of documents,\nit can be ran on the same box as the web server or separately.\n\n",
+      "source_type": "documentation",
+      "symbol": "line-window",
+      "changed": true,
+      "fallback": false
+    },
+    "S3": {
+      "path": "docs/SERVICES.md",
+      "sha": "3b1e314cc5aa9bc40643cf9d89cca3c43f097a50",
+      "start_line": 1,
+      "end_line": 21,
+      "text": "# Backend Services\n\nOutline's backend is split into several distinct [services](../server/services)\nthat combined form the application. When running the official Docker container\nit will run all of the production services by default.\n\nYou can choose which services to run through either a comma separated CLI flag,\n`--services`, or the `SERVICES` environment variable. For example:\n\n```bash\nyarn start --services=web,worker\n```\n\n## Admin\n\nCurrently this service is only used in development to view and debug the queues.\nIt can be viewed at `/admin` when enabled.\n\n## Web\n\nThe web server hosts the Application and API, as such this is the main service\n",
+      "source_type": "documentation",
+      "symbol": "line-window",
+      "changed": true,
+      "fallback": false
+    },
+    "S4": {
+      "path": "docs/SERVICES.md",
+      "sha": "3b1e314cc5aa9bc40643cf9d89cca3c43f097a50",
+      "start_line": 25,
+      "end_line": 45,
+      "text": "\nThe websocket server is used to communicate with the frontend, it can be ran on\nthe same box as the web server or separately.\n\n## Worker\n\nAt least one worker process is required to process the [queues](../server/queues).\n\n## Collaboration\n\nThe collaboration server coordinates all realtime editing and updating of documents,\nit can be ran on the same box as the web server or separately.\n\n```bash\nyarn start --services=collaboration\n```\n\nIf the collaboration service is hosted on a separate domain then the `COLLABORATION_URL`\nenv must be set to the publicly accessible URL. For example, if the app is hosted at\n`https://docs.example.com` you may use something like:\n`COLLABORATION_URL=wss://docs-collaboration.example.com`.\n",
+      "source_type": "documentation",
+      "symbol": "line-window",
+      "changed": true,
+      "fallback": false
+    },
+    "S5": {
+      "path": "docs/SERVICES.md",
+      "sha": "3b1e314cc5aa9bc40643cf9d89cca3c43f097a50",
+      "start_line": 6,
+      "end_line": 26,
+      "text": "\nYou can choose which services to run through either a comma separated CLI flag,\n`--services`, or the `SERVICES` environment variable. For example:\n\n```bash\nyarn start --services=web,worker\n```\n\n## Admin\n\nCurrently this service is only used in development to view and debug the queues.\nIt can be viewed at `/admin` when enabled.\n\n## Web\n\nThe web server hosts the Application and API, as such this is the main service\nand must be run by at least one process.\n\n## Websockets\n\nThe websocket server is used to communicate with the frontend, it can be ran on\n",
+      "source_type": "documentation",
+      "symbol": "line-window",
+      "changed": true,
+      "fallback": false
+    },
+    "S6": {
+      "path": "README.md",
+      "sha": "ab60c94cf5e44a522d7b40954fd71bdbcef278ce",
+      "start_line": 51,
+      "end_line": 55,
+      "text": "## Architecture\n\nIf you're interested in contributing or learning more about the Outline codebase\nplease refer to the [architecture document](docs/ARCHITECTURE.md) first for a high level overview of how the application is put together.\n\n",
+      "source_type": "documentation",
+      "symbol": "",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S7": {
+      "path": "docs/SERVICES.md",
+      "sha": "ab60c94cf5e44a522d7b40954fd71bdbcef278ce",
+      "start_line": 14,
+      "end_line": 18,
+      "text": "## Admin\n\nCurrently this service is only used in development to view and debug the queues.\nIt can be viewed at `/admin` when enabled.\n\n",
+      "source_type": "documentation",
+      "symbol": "",
+      "changed": 1,
+      "fallback": 0
+    },
+    "S8": {
+      "path": "docs/SERVICES.md",
+      "sha": "ab60c94cf5e44a522d7b40954fd71bdbcef278ce",
+      "start_line": 33,
+      "end_line": 45,
+      "text": "## Collaboration\n\nThe collaboration server coordinates all realtime editing and updating of documents,\nit can be ran on the same box as the web server or separately.\n\n```bash\nyarn start --services=collaboration\n```\n\nIf the collaboration service is hosted on a separate domain then the `COLLABORATION_URL`\nenv must be set to the publicly accessible URL. For example, if the app is hosted at\n`https://docs.example.com` you may use something like:\n`COLLABORATION_URL=wss://docs-collaboration.example.com`.\n",
+      "source_type": "documentation",
+      "symbol": "",
+      "changed": 1,
+      "fallback": 0
+    },
+    "S9": {
+      "path": "docs/SERVICES.md",
+      "sha": "ab60c94cf5e44a522d7b40954fd71bdbcef278ce",
+      "start_line": 1,
+      "end_line": 13,
+      "text": "# Backend Services\n\nOutline's backend is split into several distinct [services](../server/services)\nthat combined form the application. When running the official Docker container\nit will run all of the production services by default.\n\nYou can choose which services to run through either a comma separated CLI flag,\n`--services`, or the `SERVICES` environment variable. For example:\n\n```bash\nyarn start --services=web,worker\n```\n\n",
+      "source_type": "documentation",
+      "symbol": "",
+      "changed": 1,
+      "fallback": 0
+    },
+    "S10": {
+      "path": "docs/TRANSLATION.md",
+      "sha": "ab60c94cf5e44a522d7b40954fd71bdbcef278ce",
+      "start_line": 32,
+      "end_line": 34,
+      "text": "## Release\n\nUpdated translations are automatically PR'd against the codebase by a bot and will be merged regularly so that new translations appear in the next release of Outline.\n",
+      "source_type": "documentation",
+      "symbol": "",
+      "changed": 0,
+      "fallback": 0
+    }
+  },
+  "coverage": [
+    {
+      "path": "docs/SERVICES.md",
+      "status": "reviewed",
+      "reasons": []
+    }
+  ],
+  "limitations": [],
+  "rejected": [],
+  "batches": [
+    {
+      "path": "docs/SERVICES.md",
+      "status": "complete",
+      "sources": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8",
+        "S9",
+        "S10"
+      ]
+    }
+  ],
+  "api_files_incomplete": false,
+  "diff_origin": "local_git_merge_base_to_head",
+  "rag": {
+    "embedded": 1,
+    "reused": 114,
+    "files": 11,
+    "chunks": 115,
+    "snapshot_sha": "ab60c94cf5e44a522d7b40954fd71bdbcef278ce",
+    "limited": false
+  },
+  "result_version": "b0915d519a04c5ce8deb214025d30dbb3ffcf9ceac1a089f063a94c2f6532ea4"
+}

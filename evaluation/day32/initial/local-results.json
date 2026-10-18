@@ -1,0 +1,102 @@
+{
+  "started": "2026-10-18T13:04:47.276334+00:00",
+  "real_ollama": true,
+  "real_mcp_stdio": true,
+  "real_git_snapshots": true,
+  "github_api": "LOCAL FIXTURE ONLY; no real PR exists",
+  "publication": "DISABLED; no GitHub mutations",
+  "outline_before": {
+    "head": "ebffdb7f7f1f966aa05739f7140e1aec09209475",
+    "status": "",
+    "branch": "main",
+    "hashes": {
+      "README.md": "7154c82222bac1e0e08dafee7a2a9980f6c9748c296a7a7eede82c284b775e94",
+      "docs/ARCHITECTURE.md": "f365206cae6fa735d7c2a1887aeba093fff6576b4ad4cafc6a1c5fec4f1b7dd6",
+      "docs/SERVICES.md": "3ed76a2c674c6144217325dc3ca95e75b659988d994931d7fb40d42834d3d44f",
+      "docs/SECURITY.md": "adf9a654604b6a0ef5dd801d91e032545dbe6289ebe72b432a812931a7a73355",
+      "docs/TRANSLATION.md": "b65065291a3559f6ade2449ff98383ff588d54adb524dd248cb09ac69823d428",
+      "docs/CODE_OF_CONDUCT.md": "7a824e72be48a842d528fa463bd632922d7a05e187d82dcadde9ce54b9d64f95",
+      "shared/utils/shallowEqual.ts": "02f64bd523954dd8aace0ee22a2f753e4da1474097675f40ac193e669238c51d",
+      "shared/utils/collections.ts": "4b5c3edecee25fadefde13c5a6686f0d05ca7016a948988691ffaba3e00c7a21",
+      "shared/utils/naturalSort.ts": "1dcb49de8e83f0fc184d4889a3780eb7f1cc7edc92527b106b1503d22d75afab",
+      "shared/utils/naturalSort.test.ts": "c9fb4546f83d743b835a4bf24ee561896680b6e0e936892416a33f1ced5d327d",
+      "app/stores/GroupsStore.ts": "2d801db68c13feef32b012e9b9985dfa55337332524e28a7fa897c945bcb78cd"
+    }
+  },
+  "scenarios": [
+    {
+      "name": "obvious_bug",
+      "path": "shared/utils/shallowEqual.ts",
+      "expectation": "Arrays of different lengths incorrectly compare equal; report bug at changed return.",
+      "status": "complete",
+      "finding_count": 1,
+      "observed_expected_presence": true,
+      "rag": {
+        "embedded": 105,
+        "reused": 0,
+        "files": 11,
+        "chunks": 115,
+        "snapshot_sha": "648bf98da8c2d0075cb0ed03c1a29a0344255f74",
+        "limited": false
+      },
+      "limitations": [],
+      "report": "obvious_bug/review.json"
+    },
+    {
+      "name": "breaking_contract",
+      "path": "shared/utils/naturalSort.ts",
+      "expectation": "Existing string-key callers in collections.ts, GroupsStore.ts and naturalSort.test.ts become TypeScript-incompatible.",
+      "status": "complete",
+      "finding_count": 1,
+      "observed_expected_presence": true,
+      "rag": {
+        "embedded": 2,
+        "reused": 113,
+        "files": 11,
+        "chunks": 115,
+        "snapshot_sha": "2f8e369556baadd4840782626281620be8f337d5",
+        "limited": false
+      },
+      "limitations": [],
+      "report": "breaking_contract/review.json"
+    },
+    {
+      "name": "safe_refactor",
+      "path": "shared/utils/shallowEqual.ts",
+      "expectation": "Equivalent reference comparison; no bug/architecture finding expected.",
+      "status": "complete",
+      "finding_count": 1,
+      "observed_expected_presence": true,
+      "rag": {
+        "embedded": 3,
+        "reused": 114,
+        "files": 11,
+        "chunks": 117,
+        "snapshot_sha": "e02b0eca72acd94145481d7a298c544c5760356e",
+        "limited": false
+      },
+      "limitations": [],
+      "report": "safe_refactor/review.json"
+    },
+    {
+      "name": "docs_only",
+      "path": "docs/SERVICES.md",
+      "expectation": "Grammar correction only; no bug/architecture finding expected.",
+      "status": "complete",
+      "finding_count": 1,
+      "observed_expected_presence": true,
+      "rag": {
+        "embedded": 1,
+        "reused": 114,
+        "files": 11,
+        "chunks": 115,
+        "snapshot_sha": "fdb58b6d9802ad4b5f28e54dec200240bd533da5",
+        "limited": false
+      },
+      "limitations": [],
+      "report": "docs_only/review.json"
+    }
+  ],
+  "outline_unchanged": true,
+  "finished": "2026-10-18T13:05:56.041487+00:00"
+}

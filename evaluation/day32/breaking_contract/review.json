@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "repo": "metalice80/outline_t",
+  "number": 102,
+  "status": "complete",
+  "created_at": "2026-10-18T13:21:26.048086+00:00",
+  "assistant": {
+    "version": "0.2.0",
+    "code_sha256": "433370640b1a66fcc4b5373ac3a4c393ca5bbb97a43251feb8a21c2a3053148c"
+  },
+  "models": {
+    "bge-m3": {
+      "name": "bge-m3:latest",
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+    },
+    "qwen3:8b": {
+      "name": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+    }
+  },
+  "summary": "\u0412 PR \u0438\u0437\u043c\u0435\u043d\u0451\u043d \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 `key` \u0432 \u0444\u0443\u043d\u043a\u0446\u0438\u0438 `naturalSortBy`, \u0447\u0442\u043e \u043c\u043e\u0436\u0435\u0442 \u043f\u0440\u0438\u0432\u0435\u0441\u0442\u0438 \u043a \u043f\u043e\u0442\u0435\u0440\u0435 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0438 \u0441\u0442\u0440\u043e\u043a\u043e\u0432\u043e\u0433\u043e \u043a\u043b\u044e\u0447\u0430.",
+  "pr": {
+    "number": 102,
+    "state": "open",
+    "title": "Update shared/utils/naturalSort.ts",
+    "body": "Local evaluation of an isolated source change.",
+    "draft": false,
+    "author": "metalice80",
+    "changed_files": 1,
+    "repo": "metalice80/outline_t",
+    "base_repo": "metalice80/outline_t",
+    "base_sha": "3b1e314cc5aa9bc40643cf9d89cca3c43f097a50",
+    "head_repo": "metalice80/outline_t",
+    "head_sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+    "merge_base_sha": "3b1e314cc5aa9bc40643cf9d89cca3c43f097a50"
+  },
+  "findings": [
+    {
+      "category": "bug",
+      "severity": "high",
+      "title": "\u041f\u043e\u0442\u0435\u0440\u044f \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0438 \u0441\u0442\u0440\u043e\u043a\u043e\u0432\u043e\u0433\u043e \u043a\u043b\u044e\u0447\u0430 \u0432 `naturalSortBy`",
+      "description": "\u0412 PR \u0438\u0437\u043c\u0435\u043d\u0451\u043d \u0442\u0438\u043f \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u0430 `key` \u0441 `string | ((item: T) => string)` \u043d\u0430 `((item: T) => string)`, \u0447\u0442\u043e \u043f\u0440\u0438\u0432\u0435\u0434\u0451\u0442 \u043a \u043f\u043e\u0442\u0435\u0440\u0435 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0438 \u0441\u0442\u0440\u043e\u043a\u043e\u0432\u043e\u0433\u043e \u043a\u043b\u044e\u0447\u0430. \u042d\u0442\u043e \u043c\u043e\u0436\u0435\u0442 \u0432\u044b\u0437\u0432\u0430\u0442\u044c \u043e\u0448\u0438\u0431\u043a\u0438 \u0432 \u043a\u043e\u0434\u0435, \u0433\u0434\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f \u0441\u0442\u0440\u043e\u043a\u043e\u0432\u044b\u0439 \u043a\u043b\u044e\u0447.",
+      "condition": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u0441\u0442\u0440\u043e\u043a\u043e\u0432\u043e\u0433\u043e \u043a\u043b\u044e\u0447\u0430 \u0432 \u0432\u044b\u0437\u043e\u0432\u0430\u0445 `naturalSortBy`.",
+      "consequence": "\u041e\u0448\u0438\u0431\u043a\u0430 \u043a\u043e\u043c\u043f\u0438\u043b\u044f\u0446\u0438\u0438 TypeScript, \u0435\u0441\u043b\u0438 \u0432\u044b\u0437\u043e\u0432\u044b \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044e\u0442 \u0441\u0442\u0440\u043e\u043a\u043e\u0432\u044b\u0439 \u043a\u043b\u044e\u0447.",
+      "recommendation": "\u0412\u0435\u0440\u043d\u0443\u0442\u044c \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0443 \u0441\u0442\u0440\u043e\u043a\u043e\u0432\u043e\u0433\u043e \u043a\u043b\u044e\u0447\u0430, \u043e\u0441\u0442\u0430\u0432\u0438\u0432 \u0442\u0438\u043f `string | ((item: T) => string)`. \u042d\u0442\u043e \u043f\u043e\u0437\u0432\u043e\u043b\u0438\u0442 \u0441\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u0438\u043c\u043e\u0441\u0442\u044c \u0441 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c \u043a\u043e\u0434\u043e\u043c.",
+      "introduced_by": "\u0418\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435 \u0442\u0438\u043f\u0430 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u0430 `key` \u0441 `string | ((item: T) => string)` \u043d\u0430 `((item: T) => string)` \u0432 \u0444\u0443\u043d\u043a\u0446\u0438\u0438 `naturalSortBy`.",
+      "path": "shared/utils/naturalSort.ts",
+      "side": "new",
+      "start_line": 30,
+      "end_line": 30,
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    }
+  ],
+  "sources": {
+    "S1": {
+      "path": "shared/utils/naturalSort.ts",
+      "sha": "3b1e314cc5aa9bc40643cf9d89cca3c43f097a50",
+      "start_line": 19,
+      "end_line": 41,
+      "text": "  keyOrCallback: string | ((item: T) => string)\n) {\n  const field =\n    typeof keyOrCallback === \"string\"\n      ? (item as Record<string, unknown>)[keyOrCallback]\n      : keyOrCallback(item);\n  return cleanValue(typeof field === \"string\" ? field : \"\");\n}\n\nfunction naturalSortBy<T extends object>(\n  items: T[],\n  key: string | ((item: T) => string),\n  sortOptions?: NaturalSortOptions\n): T[] {\n  if (!items) {\n    return [];\n  }\n  const sort = sortOptions\n    ? naturalSort({\n        caseSensitive: sortOptions.caseSensitive,\n        direction: sortOptions.direction === \"desc\" ? \"desc\" : undefined,\n      })\n    : sorter;\n",
+      "source_type": "code",
+      "symbol": "line-window",
+      "changed": true,
+      "fallback": false
+    },
+    "S2": {
+      "path": "shared/utils/naturalSort.ts",
+      "sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+      "start_line": 19,
+      "end_line": 41,
+      "text": "  keyOrCallback: string | ((item: T) => string)\n) {\n  const field =\n    typeof keyOrCallback === \"string\"\n      ? (item as Record<string, unknown>)[keyOrCallback]\n      : keyOrCallback(item);\n  return cleanValue(typeof field === \"string\" ? field : \"\");\n}\n\nfunction naturalSortBy<T extends object>(\n  items: T[],\n  key: (item: T) => string,\n  sortOptions?: NaturalSortOptions\n): T[] {\n  if (!items) {\n    return [];\n  }\n  const sort = sortOptions\n    ? naturalSort({\n        caseSensitive: sortOptions.caseSensitive,\n        direction: sortOptions.direction === \"desc\" ? \"desc\" : undefined,\n      })\n    : sorter;\n",
+      "source_type": "code",
+      "symbol": "line-window",
+      "changed": true,
+      "fallback": false
+    },
+    "S3": {
+      "path": "app/stores/GroupsStore.ts",
+      "sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+      "start_line": 13,
+      "end_line": 21,
+      "text": "  }\n\n  @override\n  get orderedData(): Group[] {\n    return naturalSort(Array.from(this.data.values()), \"name\");\n  }\n\n  fetchPage = async (\n    params: FetchPageParams | undefined\n",
+      "source_type": "code",
+      "symbol": "",
+      "changed": false,
+      "fallback": false
+    },
+    "S4": {
+      "path": "app/stores/GroupsStore.ts",
+      "sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+      "start_line": 1,
+      "end_line": 6,
+      "text": "import { override } from \"mobx\";\nimport naturalSort from \"@shared/utils/naturalSort\";\nimport Group from \"~/models/Group\";\nimport type { PaginationParams } from \"~/types\";\nimport type RootStore from \"./RootStore\";\nimport Store, { type PaginatedResponse } from \"./base/Store\";\n",
+      "source_type": "code",
+      "symbol": "",
+      "changed": false,
+      "fallback": false
+    },
+    "S5": {
+      "path": "shared/utils/collections.ts",
+      "sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+      "start_line": 17,
+      "end_line": 25,
+      "text": "  if (sort.field === \"index\") {\n    return nodes;\n  }\n\n  const orderedDocs = naturalSort(nodes, sort.field, {\n    direction: sort.direction,\n  });\n\n  if (!sortChildren) {\n",
+      "source_type": "code",
+      "symbol": "",
+      "changed": false,
+      "fallback": false
+    },
+    "S6": {
+      "path": "shared/utils/collections.ts",
+      "sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+      "start_line": 1,
+      "end_line": 7,
+      "text": "import type { NavigationNode } from \"../types\";\nimport shallowEqual from \"./shallowEqual\";\nimport naturalSort from \"./naturalSort\";\n\ntype Sort = {\n  field: string;\n  direction: \"asc\" | \"desc\";\n",
+      "source_type": "code",
+      "symbol": "",
+      "changed": false,
+      "fallback": false
+    },
+    "S7": {
+      "path": "shared/utils/naturalSort.test.ts",
+      "sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+      "start_line": 1,
+      "end_line": 7,
+      "text": "import naturalSort from \"./naturalSort\";\n\ndescribe(\"#naturalSort\", () => {\n  it(\"should sort a list of objects by the given key\", () => {\n    const items = [\n      {\n        name: \"Joan\",\n",
+      "source_type": "code",
+      "symbol": "",
+      "changed": false,
+      "fallback": false
+    },
+    "S8": {
+      "path": "shared/utils/naturalSort.test.ts",
+      "sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+      "start_line": 12,
+      "end_line": 20,
+      "text": "      {\n        name: \"Mark\",\n      },\n    ];\n    expect(naturalSort(items, \"name\")).toEqual([\n      {\n        name: \"Joan\",\n      },\n      {\n",
+      "source_type": "code",
+      "symbol": "",
+      "changed": false,
+      "fallback": false
+    },
+    "S9": {
+      "path": "shared/utils/naturalSort.test.ts",
+      "sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+      "start_line": 37,
+      "end_line": 45,
+      "text": "      {\n        name: \"Mark\",\n      },\n    ];\n    expect(naturalSort(items, (item) => item.name)).toEqual([\n      {\n        name: \"Joan\",\n      },\n      {\n",
+      "source_type": "code",
+      "symbol": "",
+      "changed": false,
+      "fallback": false
+    },
+    "S10": {
+      "path": "shared/utils/naturalSort.ts",
+      "sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+      "start_line": 28,
+      "end_line": 35,
+      "text": "function naturalSortBy<T extends object>(\n  items: T[],\n  key: (item: T) => string,\n  sortOptions?: NaturalSortOptions\n): T[] {\n  if (!items) {\n    return [];\n  }\n",
+      "source_type": "code",
+      "symbol": "naturalSortBy",
+      "changed": 1,
+      "fallback": 0
+    },
+    "S11": {
+      "path": "app/stores/GroupsStore.ts",
+      "sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "import naturalSort from \"@shared/utils/naturalSort\";\n",
+      "source_type": "code",
+      "symbol": "import_statement",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S12": {
+      "path": "shared/utils/collections.ts",
+      "sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "import naturalSort from \"./naturalSort\";\n",
+      "source_type": "code",
+      "symbol": "import_statement",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S13": {
+      "path": "shared/utils/naturalSort.test.ts",
+      "sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import naturalSort from \"./naturalSort\";\n",
+      "source_type": "code",
+      "symbol": "import_statement",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S14": {
+      "path": "shared/utils/naturalSort.ts",
+      "sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+      "start_line": 17,
+      "end_line": 20,
+      "text": "function getSortByField<T extends object>(\n  item: T,\n  keyOrCallback: string | ((item: T) => string)\n) {\n",
+      "source_type": "code",
+      "symbol": "getSortByField",
+      "changed": 1,
+      "fallback": 0
+    }
+  },
+  "coverage": [
+    {
+      "path": "shared/utils/naturalSort.ts",
+      "status": "reviewed",
+      "reasons": []
+    }
+  ],
+  "limitations": [
+    "\u041f\u043e\u0438\u0441\u043a \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0439/\u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0439 \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d review_max_search_files \u0438 12 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u0430\u043c\u0438."
+  ],
+  "rejected": [],
+  "batches": [
+    {
+      "path": "shared/utils/naturalSort.ts",
+      "status": "complete",
+      "sources": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8",
+        "S9",
+        "S10",
+        "S11",
+        "S12",
+        "S13",
+        "S14"
+      ]
+    }
+  ],
+  "api_files_incomplete": false,
+  "diff_origin": "local_git_merge_base_to_head",
+  "rag": {
+    "embedded": 2,
+    "reused": 113,
+    "files": 11,
+    "chunks": 115,
+    "snapshot_sha": "fdb769c00d5ad80792cc474989f12bda92cd4849",
+    "limited": false
+  },
+  "result_version": "9e00494a7f0831e427f878b4200149afad64843081d0a96afa04ba904ff69f55"
+}

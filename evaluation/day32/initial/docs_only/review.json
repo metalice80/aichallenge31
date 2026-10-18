@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "repo": "metalice80/outline_t",
+  "number": 104,
+  "status": "complete",
+  "created_at": "2026-10-18T13:05:40.591450+00:00",
+  "assistant": {
+    "version": "0.2.0",
+    "code_sha256": "e2ebb56bb942fcca7670b749f173ec7bd6d5dfc01deba16fcf680e26830edb8e"
+  },
+  "models": {
+    "bge-m3": {
+      "name": "bge-m3:latest",
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+    },
+    "qwen3:8b": {
+      "name": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+    }
+  },
+  "summary": "\u0412 PR \u043e\u0431\u043d\u0430\u0440\u0443\u0436\u0435\u043d\u044b \u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0435 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f \u0432 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u0438:",
+  "pr": {
+    "number": 104,
+    "state": "open",
+    "title": "Update docs/SERVICES.md",
+    "body": "Local evaluation of an isolated source change.",
+    "draft": false,
+    "author": "metalice80",
+    "changed_files": 1,
+    "repo": "metalice80/outline_t",
+    "base_repo": "metalice80/outline_t",
+    "base_sha": "1349e360b399d65085daecc74ff7ca3bd82470c2",
+    "head_repo": "metalice80/outline_t",
+    "head_sha": "fdb58b6d9802ad4b5f28e54dec200240bd533da5",
+    "merge_base_sha": "1349e360b399d65085daecc74ff7ca3bd82470c2"
+  },
+  "findings": [
+    {
+      "category": "recommendation",
+      "severity": "low",
+      "title": "\u0418\u0441\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0430 \u043e\u0440\u0444\u043e\u0433\u0440\u0430\u0444\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043e\u0448\u0438\u0431\u043a\u0430 \u0432 \u0442\u0435\u043a\u0441\u0442\u0435",
+      "description": "\u0412 \u0441\u0442\u0440\u043e\u043a\u0435 'it can be ran on' \u0438\u0441\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0430 \u043e\u0440\u0444\u043e\u0433\u0440\u0430\u0444\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043e\u0448\u0438\u0431\u043a\u0430 \u043d\u0430 'it can be run on'.",
+      "condition": "\u0412 \u0441\u0442\u0430\u0440\u043e\u0439 \u0432\u0435\u0440\u0441\u0438\u0438 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043b\u043e\u0441\u044c \u0441\u043b\u043e\u0432\u043e 'ran', \u0447\u0442\u043e \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0433\u043b\u0430\u0433\u043e\u043b\u043e\u043c \u043f\u0440\u043e\u0448\u0435\u0434\u0448\u0435\u0433\u043e \u0432\u0440\u0435\u043c\u0435\u043d\u0438, \u0430 \u0432 \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442\u0435 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u0438 \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u0433\u043b\u0430\u0433\u043e\u043b \u0432 \u0431\u0430\u0437\u0438\u0441\u043d\u043e\u0439 \u0444\u043e\u0440\u043c\u0435 'run'.",
+      "consequence": "\u041d\u0435\u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u0433\u043b\u0430\u0433\u043e\u043b\u0430 \u043c\u043e\u0436\u0435\u0442 \u0432\u044b\u0437\u0432\u0430\u0442\u044c \u043f\u0443\u0442\u0430\u043d\u0438\u0446\u0443 \u0443 \u0447\u0438\u0442\u0430\u0442\u0435\u043b\u0435\u0439 \u0438 \u0441\u043d\u0438\u0436\u0430\u0435\u0442 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u043e \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u0438.",
+      "recommendation": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u0433\u043b\u0430\u0433\u043e\u043b 'run' \u0432 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0435\u043c \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442\u0435.",
+      "introduced_by": "PR fdb58b6d9802ad4b5f28e54dec200240bd533da5",
+      "path": "docs/SERVICES.md",
+      "side": "new",
+      "start_line": 26,
+      "end_line": 26,
+      "sources": [
+        "S2"
+      ]
+    }
+  ],
+  "sources": {
+    "S1": {
+      "path": "docs/SERVICES.md",
+      "sha": "1349e360b399d65085daecc74ff7ca3bd82470c2",
+      "start_line": 15,
+      "end_line": 37,
+      "text": "\nCurrently this service is only used in development to view and debug the queues.\nIt can be viewed at `/admin` when enabled.\n\n## Web\n\nThe web server hosts the Application and API, as such this is the main service\nand must be run by at least one process.\n\n## Websockets\n\nThe websocket server is used to communicate with the frontend, it can be ran on\nthe same box as the web server or separately.\n\n## Worker\n\nAt least one worker process is required to process the [queues](../server/queues).\n\n## Collaboration\n\nThe collaboration server coordinates all realtime editing and updating of documents,\nit can be ran on the same box as the web server or separately.\n\n",
+      "source_type": "documentation",
+      "symbol": "line-window",
+      "changed": true,
+      "fallback": false
+    },
+    "S2": {
+      "path": "docs/SERVICES.md",
+      "sha": "fdb58b6d9802ad4b5f28e54dec200240bd533da5",
+      "start_line": 15,
+      "end_line": 37,
+      "text": "\nCurrently this service is only used in development to view and debug the queues.\nIt can be viewed at `/admin` when enabled.\n\n## Web\n\nThe web server hosts the Application and API, as such this is the main service\nand must be run by at least one process.\n\n## Websockets\n\nThe websocket server is used to communicate with the frontend, it can be run on\nthe same box as the web server or separately.\n\n## Worker\n\nAt least one worker process is required to process the [queues](../server/queues).\n\n## Collaboration\n\nThe collaboration server coordinates all realtime editing and updating of documents,\nit can be ran on the same box as the web server or separately.\n\n",
+      "source_type": "documentation",
+      "symbol": "line-window",
+      "changed": true,
+      "fallback": false
+    },
+    "S3": {
+      "path": "docs/SERVICES.md",
+      "sha": "1349e360b399d65085daecc74ff7ca3bd82470c2",
+      "start_line": 25,
+      "end_line": 45,
+      "text": "\nThe websocket server is used to communicate with the frontend, it can be ran on\nthe same box as the web server or separately.\n\n## Worker\n\nAt least one worker process is required to process the [queues](../server/queues).\n\n## Collaboration\n\nThe collaboration server coordinates all realtime editing and updating of documents,\nit can be ran on the same box as the web server or separately.\n\n```bash\nyarn start --services=collaboration\n```\n\nIf the collaboration service is hosted on a separate domain then the `COLLABORATION_URL`\nenv must be set to the publicly accessible URL. For example, if the app is hosted at\n`https://docs.example.com` you may use something like:\n`COLLABORATION_URL=wss://docs-collaboration.example.com`.\n",
+      "source_type": "documentation",
+      "symbol": "line-window",
+      "changed": true,
+      "fallback": false
+    },
+    "S4": {
+      "path": "docs/SERVICES.md",
+      "sha": "1349e360b399d65085daecc74ff7ca3bd82470c2",
+      "start_line": 6,
+      "end_line": 26,
+      "text": "\nYou can choose which services to run through either a comma separated CLI flag,\n`--services`, or the `SERVICES` environment variable. For example:\n\n```bash\nyarn start --services=web,worker\n```\n\n## Admin\n\nCurrently this service is only used in development to view and debug the queues.\nIt can be viewed at `/admin` when enabled.\n\n## Web\n\nThe web server hosts the Application and API, as such this is the main service\nand must be run by at least one process.\n\n## Websockets\n\nThe websocket server is used to communicate with the frontend, it can be ran on\n",
+      "source_type": "documentation",
+      "symbol": "line-window",
+      "changed": true,
+      "fallback": false
+    },
+    "S5": {
+      "path": "README.md",
+      "sha": "fdb58b6d9802ad4b5f28e54dec200240bd533da5",
+      "start_line": 51,
+      "end_line": 55,
+      "text": "## Architecture\n\nIf you're interested in contributing or learning more about the Outline codebase\nplease refer to the [architecture document](docs/ARCHITECTURE.md) first for a high level overview of how the application is put together.\n\n",
+      "source_type": "documentation",
+      "symbol": "",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S6": {
+      "path": "docs/SERVICES.md",
+      "sha": "fdb58b6d9802ad4b5f28e54dec200240bd533da5",
+      "start_line": 14,
+      "end_line": 18,
+      "text": "## Admin\n\nCurrently this service is only used in development to view and debug the queues.\nIt can be viewed at `/admin` when enabled.\n\n",
+      "source_type": "documentation",
+      "symbol": "",
+      "changed": 1,
+      "fallback": 0
+    },
+    "S7": {
+      "path": "docs/SERVICES.md",
+      "sha": "fdb58b6d9802ad4b5f28e54dec200240bd533da5",
+      "start_line": 33,
+      "end_line": 45,
+      "text": "## Collaboration\n\nThe collaboration server coordinates all realtime editing and updating of documents,\nit can be ran on the same box as the web server or separately.\n\n```bash\nyarn start --services=collaboration\n```\n\nIf the collaboration service is hosted on a separate domain then the `COLLABORATION_URL`\nenv must be set to the publicly accessible URL. For example, if the app is hosted at\n`https://docs.example.com` you may use something like:\n`COLLABORATION_URL=wss://docs-collaboration.example.com`.\n",
+      "source_type": "documentation",
+      "symbol": "",
+      "changed": 1,
+      "fallback": 0
+    },
+    "S8": {
+      "path": "README.md",
+      "sha": "fdb58b6d9802ad4b5f28e54dec200240bd533da5",
+      "start_line": 47,
+      "end_line": 50,
+      "text": "# Development\n\nThere is a short guide for [setting up a development environment](https://docs.getoutline.com/s/hosting/doc/local-development-5hEhFRXow7) if you wish to contribute changes, fixes, and improvements to Outline.\n\n",
+      "source_type": "documentation",
+      "symbol": "",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S9": {
+      "path": "README.md",
+      "sha": "fdb58b6d9802ad4b5f28e54dec200240bd533da5",
+      "start_line": 23,
+      "end_line": 32,
+      "text": "# Installation\n\nPlease see the [documentation](https://docs.getoutline.com/s/hosting/) for running your own copy of Outline in a production configuration.\n\nAvailable container images:\n* [![Container Image Release](https://img.shields.io/docker/v/outlinewiki/outline?sort=semver&label=Latest%20release)](https://hub.docker.com/r/outlinewiki/outline)\n* [![Container Image Nightly](https://img.shields.io/docker/v/outlinewiki/outline?sort=date&label=Latest%20development%20version)](https://hub.docker.com/r/outlinewiki/outline)\n\nIf you have questions or improvements for the docs please create a thread in [GitHub discussions](https://github.com/outline/outline/discussions).\n\n",
+      "source_type": "documentation",
+      "symbol": "",
+      "changed": 0,
+      "fallback": 0
+    }
+  },
+  "coverage": [
+    {
+      "path": "docs/SERVICES.md",
+      "status": "reviewed",
+      "reasons": []
+    }
+  ],
+  "limitations": [],
+  "rejected": [],
+  "batches": [
+    {
+      "path": "docs/SERVICES.md",
+      "status": "complete",
+      "sources": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8",
+        "S9"
+      ]
+    }
+  ],
+  "api_files_incomplete": false,
+  "diff_origin": "local_git_merge_base_to_head",
+  "rag": {
+    "embedded": 1,
+    "reused": 114,
+    "files": 11,
+    "chunks": 115,
+    "snapshot_sha": "fdb58b6d9802ad4b5f28e54dec200240bd533da5",
+    "limited": false
+  },
+  "result_version": "5e72bac5e5899dfb53be7b5988f92757ec334fdb80f8d191bc7b11c86f7f1555"
+}

@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "outline-dev-assistant"
-version = "0.1.0"
+version = "0.2.0"
 description = "Локальный RAG-ассистент по документации Outline с MCP"
 requires-python = ">=3.11"
-dependencies = ["mcp>=1.20,<2", "httpx>=0.28,<0.29", "numpy>=2.3,<3"]
+dependencies = ["mcp>=1.20,<2", "httpx>=0.28,<0.29", "numpy>=2.3,<3", "tree-sitter>=0.25,<0.26", "tree-sitter-typescript>=0.23,<0.24", "tree-sitter-javascript>=0.25,<0.26", "jsonschema>=4.20,<5"]
 
 [project.optional-dependencies]
-test = ["pytest>=8,<10"]
+test = ["pytest>=8,<10", "PyYAML>=6,<7"]
 
 [project.scripts]
 outline-assistant = "outline_assistant.cli:main"

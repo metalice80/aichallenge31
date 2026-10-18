@@ -45,7 +45,30 @@ async def doctor(settings, ollama):
 
 async def run(args, settings, ollama):
     if args.command == "doctor":
-        return await doctor(settings, ollama)
+        result = await doctor(settings, ollama)
+        if args.review:
+            from .review_ops import doctor_review
+            result |= await doctor_review(settings)
+        return result
+    if args.command == "review-pr":
+        from .review import run_review
+        report = await run_review(settings, ollama, args.repo or settings.github_repo, args.number, args.output_dir, args.expected_head or "", progress)
+        print(f"Ревью: {report['status']}; отчёт: {args.output_dir}/review.md")
+        return 0 if report["status"] in ("complete", "partial") else 1
+    if args.command == "publish-review":
+        from .publishing import publish_review
+        from pathlib import Path
+        try:
+            report = json.loads(Path(args.report).read_text())
+        except (OSError, ValueError) as exc:
+            raise AppError("Не удалось прочитать review.json.") from exc
+        result = await asyncio.to_thread(publish_review, settings, args.repo or settings.github_repo, args.number, report, args.expected_head or "", args.run_url or "")
+        print(json.dumps(result, ensure_ascii=False))
+        return 0 if result["status"] in ("published", "current", "closed") else 1
+    if args.command == "cleanup-review":
+        from .review_ops import cleanup_snapshots
+        print(json.dumps({"apply": args.apply, "snapshots": cleanup_snapshots(settings, args.apply)}, ensure_ascii=False))
+        return 0
     if args.command == "docs":
         for document in read_documents(settings):
             print(document.path)
@@ -80,8 +103,22 @@ def main():
     parser = argparse.ArgumentParser(description="Локальный RAG-ассистент по Outline")
     parser.add_argument("--config", help="TOML-конфигурация (по умолчанию ./config.toml)")
     commands = parser.add_subparsers(dest="command")
-    for name in ("doctor", "docs", "chat"):
+    diagnostic = commands.add_parser("doctor")
+    diagnostic.add_argument("--review", action="store_true")
+    for name in ("docs", "chat"):
         commands.add_parser(name)
+    for name in ("review-pr", "publish-review"):
+        review = commands.add_parser(name)
+        review.add_argument("--repo")
+        review.add_argument("--number", type=int, required=True)
+        review.add_argument("--expected-head")
+        if name == "review-pr":
+            review.add_argument("--output-dir", required=True)
+        else:
+            review.add_argument("--report", required=True)
+            review.add_argument("--run-url")
+    cleanup = commands.add_parser("cleanup-review")
+    cleanup.add_argument("--apply", action="store_true")
     index = commands.add_parser("index")
     index.add_argument("--rebuild", action="store_true")
     question = commands.add_parser("ask")

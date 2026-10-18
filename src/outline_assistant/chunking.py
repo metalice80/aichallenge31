@@ -16,6 +16,12 @@ class Chunk:
     text: str
     hash: str
 
+    source_type: str = "documentation"
+    snapshot_sha: str = ""
+    symbol: str = ""
+    fallback: bool = False
+    changed: bool = False
+
     def record(self):
         return asdict(self)
 

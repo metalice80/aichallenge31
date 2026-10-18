@@ -1,0 +1,25 @@
+{
+  "total_count": 1,
+  "artifacts": [
+    {
+      "id": 12139273690,
+      "node_id": "MDg6QXJ0aWZhY3QxMjEzOTI3MzY5MA==",
+      "name": "ai-review-1-39135121614-1",
+      "size_in_bytes": 5303,
+      "url": "https://api.github.com/repos/metalice80/outline_t/actions/artifacts/12139273690",
+      "archive_download_url": "https://api.github.com/repos/metalice80/outline_t/actions/artifacts/12139273690/zip",
+      "expired": false,
+      "digest": "sha256:eb480fbfa1d5a1cf82798a78f393f275d2ef484b4399deed32272991c4bc5d73",
+      "created_at": "2026-10-18T14:15:58Z",
+      "updated_at": "2026-10-18T14:15:58Z",
+      "expires_at": "2026-11-01T14:15:54Z",
+      "workflow_run": {
+        "id": 39135121614,
+        "repository_id": 1424344097,
+        "head_repository_id": 1424344097,
+        "head_branch": "day32-review-smoke",
+        "head_sha": "5c4efcfde8b15eb9c616e05dd17483a4b166be63"
+      }
+    }
+  ]
+}

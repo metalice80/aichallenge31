@@ -6,3 +6,6 @@ config.toml
 .index/
 *.egg-info/
 dist/
+.review-cache/
+.review-work/
+review-output/

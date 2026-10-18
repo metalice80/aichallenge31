@@ -14,3 +14,27 @@ git_timeout = 10.0
 file_limit = 80
 num_ctx = 16384
 answer_tokens = 1800
+
+# PR review. These caches never overwrite the /help index.
+github_repo = "metalice80/outline_t"
+github_api_url = "https://api.github.com"
+github_api_version = "2026-03-10"
+github_timeout = 30.0
+github_retries = 2
+github_max_pages = 30
+review_git_dir = ".review-cache/git"
+review_index_dir = ".review-cache/rag"
+review_git_timeout = 180.0
+review_code_include = ["app/**/*.ts", "app/**/*.tsx", "server/**/*.ts", "server/**/*.tsx", "shared/**/*.ts", "shared/**/*.tsx", "plugins/**/*.ts", "plugins/**/*.tsx", "app/**/*.js", "server/**/*.js", "shared/**/*.js", "plugins/**/*.js"]
+review_max_files = 30
+review_max_file_bytes = 200000
+review_max_diff_bytes = 120000
+review_max_index_files = 1000
+review_max_tree_files = 10000
+review_max_search_files = 500
+review_max_batches = 40
+review_retries = 1
+review_keep_days = 14
+publish_enabled = false
+publication_author = "github-actions[bot]"
+# GITHUB_TOKEN is read ONLY from the environment; never put it here.

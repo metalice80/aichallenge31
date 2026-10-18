@@ -1,0 +1,133 @@
+name: Local AI review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+    inputs:
+      number:
+        description: Pull request number in metalice80/outline_t
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    if: >-
+      github.repository == 'metalice80/outline_t' &&
+      (github.event_name == 'workflow_dispatch' ||
+       (github.event.pull_request.user.login == 'metalice80' &&
+        github.event.pull_request.head.repo.full_name == 'metalice80/outline_t' &&
+        github.event.pull_request.base.repo.full_name == 'metalice80/outline_t' &&
+        github.event.pull_request.draft == false))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      allowed: ${{ steps.check.outputs.allowed }}
+      number: ${{ steps.check.outputs.number }}
+      head: ${{ steps.check.outputs.head }}
+    steps:
+      - name: Verify PR through API before allocating self-hosted runner
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          INPUT_NUMBER: ${{ inputs.number }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, os, re, urllib.request
+          event = json.load(open(os.environ['GITHUB_EVENT_PATH']))
+          number = os.environ.get('INPUT_NUMBER') if os.environ['GITHUB_EVENT_NAME'] == 'workflow_dispatch' else str(event['pull_request']['number'])
+          if not re.fullmatch(r'[0-9]+', number or '') or int(number) <= 0:
+              raise SystemExit('Invalid PR number')
+          number = str(int(number))
+          repo = 'metalice80/outline_t'
+          req = urllib.request.Request(f'https://api.github.com/repos/{repo}/pulls/{number}', headers={'Authorization': 'Bearer ' + os.environ['GH_TOKEN'], 'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2026-03-10'})
+          with urllib.request.urlopen(req, timeout=30) as response:
+              pr = json.load(response)
+          allowed = (pr['state'] == 'open' and not pr['draft'] and pr['user']['login'] == 'metalice80' and (pr['head'].get('repo') or {}).get('full_name') == repo and (pr['base'].get('repo') or {}).get('full_name') == repo)
+          head = pr['head']['sha']
+          if not re.fullmatch(r'[0-9a-f]{40}', head):
+              raise SystemExit('Invalid head SHA')
+          if os.environ['GITHUB_EVENT_NAME'] == 'pull_request' and event['pull_request']['head']['sha'] != head:
+              allowed = False
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write(f'allowed={str(allowed).lower()}\nnumber={number}\nhead={head}\n')
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write(f'PR #{number}: ' + ('eligible for local review' if allowed else 'skipped: untrusted, draft, closed, or stale event') + '\n')
+          PY
+
+  review:
+    needs: gate
+    if: needs.gate.outputs.allowed == 'true'
+    runs-on: [self-hosted, ai-review]
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      pull-requests: write
+    concurrency:
+      group: local-ai-review-${{ github.repository }}-${{ needs.gate.outputs.number }}
+      cancel-in-progress: true
+    env:
+      ASSISTANT_BIN: ${{ vars.AI_REVIEW_BIN }}
+      ASSISTANT_CONFIG: ${{ vars.AI_REVIEW_CONFIG }}
+      ASSISTANT_HOME: ${{ vars.AI_REVIEW_HOME }}
+      PR_NUMBER: ${{ needs.gate.outputs.number }}
+      EXPECTED_HEAD: ${{ needs.gate.outputs.head }}
+      GITHUB_TOKEN: ${{ github.token }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      PYTHONPATH: ''
+      PYTHONHOME: ''
+    steps:
+      - name: Prepare report directory
+        shell: bash
+        run: |
+          set -euo pipefail
+          output_dir="$RUNNER_TEMP/ai-review-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          mkdir -p "$output_dir"
+          printf 'OUTPUT_DIR=%s\n' "$output_dir" >> "$GITHUB_ENV"
+      - name: Diagnose trusted installation
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$ASSISTANT_BIN" = /* && -x "$ASSISTANT_BIN" ]]
+          [[ "$ASSISTANT_CONFIG" = /* && -f "$ASSISTANT_CONFIG" ]]
+          [[ "$ASSISTANT_HOME" = /* && -d "$ASSISTANT_HOME" ]]
+          cd "$ASSISTANT_HOME"
+          mkdir -p "$OUTPUT_DIR"
+          "$ASSISTANT_BIN" --config "$ASSISTANT_CONFIG" doctor --review > "$OUTPUT_DIR/doctor.log" 2>&1
+      - name: Analyze immutable PR snapshot without executing it
+        id: review
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$ASSISTANT_HOME"
+          "$ASSISTANT_BIN" --config "$ASSISTANT_CONFIG" review-pr --repo metalice80/outline_t --number "$PR_NUMBER" --expected-head "$EXPECTED_HEAD" --output-dir "$OUTPUT_DIR" > "$OUTPUT_DIR/review.log" 2>&1
+      - name: Publish or update the single report comment
+        if: steps.review.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$ASSISTANT_HOME"
+          "$ASSISTANT_BIN" --config "$ASSISTANT_CONFIG" publish-review --repo metalice80/outline_t --number "$PR_NUMBER" --expected-head "$EXPECTED_HEAD" --report "$OUTPUT_DIR/review.json" --run-url "$RUN_URL" > "$OUTPUT_DIR/publication.log" 2>&1
+      - name: Actions summary
+        if: always()
+        shell: bash
+        run: |
+          if [[ -f "$OUTPUT_DIR/review.md" ]]; then
+            cat "$OUTPUT_DIR/review.md" >> "$GITHUB_STEP_SUMMARY"
+          else
+            printf 'Review did not produce a report. See diagnostic artifacts.\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Preserve reports and diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4, verified via GitHub API
+        with:
+          name: ai-review-${{ needs.gate.outputs.number }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ env.OUTPUT_DIR }}
+          if-no-files-found: warn
+          retention-days: 14

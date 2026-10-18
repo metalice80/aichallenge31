@@ -90,7 +90,9 @@ class Index:
                 raise ValueError("нет контрольных сумм")
             vectors = np.load(directory / "vectors.npy", allow_pickle=False)
             with sqlite3.connect(f"{(directory / 'chunks.sqlite3').as_uri()}?mode=ro", uri=True) as db:
-                rows = db.execute("SELECT row_index,id,path,heading,start_line,end_line,text,hash FROM chunks ORDER BY row_index").fetchall()
+                columns = {r[1] for r in db.execute("PRAGMA table_info(chunks)")}
+                extras = ",source_type,snapshot_sha,symbol,fallback,changed" if "source_type" in columns else ""
+                rows = db.execute("SELECT row_index,id,path,heading,start_line,end_line,text,hash" + extras + " FROM chunks ORDER BY row_index").fetchall()
                 documents = dict(db.execute("SELECT path,hash FROM documents"))
             if [r[0] for r in rows] != list(range(len(rows))):
                 raise ValueError("нарушена связь матрицы и фрагментов")
@@ -114,10 +116,12 @@ class Index:
                 CREATE TABLE documents(path TEXT PRIMARY KEY, hash TEXT NOT NULL);
                 CREATE TABLE chunks(row_index INTEGER PRIMARY KEY, id TEXT UNIQUE NOT NULL,
                     path TEXT NOT NULL, heading TEXT NOT NULL, start_line INTEGER NOT NULL,
-                    end_line INTEGER NOT NULL, text TEXT NOT NULL, hash TEXT NOT NULL);
+                    end_line INTEGER NOT NULL, text TEXT NOT NULL, hash TEXT NOT NULL,
+                    source_type TEXT NOT NULL, snapshot_sha TEXT NOT NULL, symbol TEXT NOT NULL,
+                    fallback INTEGER NOT NULL, changed INTEGER NOT NULL);
             """)
             db.executemany("INSERT INTO documents VALUES (?,?)", documents.items())
-            db.executemany("INSERT INTO chunks VALUES (?,?,?,?,?,?,?,?)", [(i, c.id, c.path, c.heading, c.start_line, c.end_line, c.text, c.hash) for i, c in enumerate(chunks)])
+            db.executemany("INSERT INTO chunks VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)", [(i, c.id, c.path, c.heading, c.start_line, c.end_line, c.text, c.hash, c.source_type, c.snapshot_sha, c.symbol, c.fallback, c.changed) for i, c in enumerate(chunks)])
         with (directory / "vectors.npy").open("wb") as output:
             np.save(output, vectors, allow_pickle=False)
             output.flush()

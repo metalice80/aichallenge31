@@ -1,0 +1,150 @@
+{
+  "total_count": 2,
+  "jobs": [
+    {
+      "id": 117697966818,
+      "run_id": 39135121614,
+      "workflow_name": "Local AI review",
+      "head_branch": "day32-review-smoke",
+      "run_url": "https://api.github.com/repos/metalice80/outline_t/actions/runs/39135121614",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVOXEIc8AAAAbZ1hy4g",
+      "head_sha": "5c4efcfde8b15eb9c616e05dd17483a4b166be63",
+      "url": "https://api.github.com/repos/metalice80/outline_t/actions/jobs/117697966818",
+      "html_url": "https://github.com/metalice80/outline_t/actions/runs/39135121614/job/117697966818",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-18T14:14:48Z",
+      "started_at": "2026-10-18T14:14:51Z",
+      "completed_at": "2026-10-18T14:14:55Z",
+      "name": "gate",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-18T14:14:52Z",
+          "completed_at": "2026-10-18T14:14:52Z"
+        },
+        {
+          "name": "Verify PR through API before allocating self-hosted runner",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-18T14:14:52Z",
+          "completed_at": "2026-10-18T14:14:52Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-18T14:14:52Z",
+          "completed_at": "2026-10-18T14:14:52Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/metalice80/outline_t/check-runs/117697966818",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000040,
+      "runner_name": "GitHub Actions 1000000040",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 117697990130,
+      "run_id": 39135121614,
+      "workflow_name": "Local AI review",
+      "head_branch": "day32-review-smoke",
+      "run_url": "https://api.github.com/repos/metalice80/outline_t/actions/runs/39135121614",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVOXEIc8AAAAbZ1jN8g",
+      "head_sha": "5c4efcfde8b15eb9c616e05dd17483a4b166be63",
+      "url": "https://api.github.com/repos/metalice80/outline_t/actions/jobs/117697990130",
+      "html_url": "https://github.com/metalice80/outline_t/actions/runs/39135121614/job/117697990130",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-18T14:14:55Z",
+      "started_at": "2026-10-18T14:14:58Z",
+      "completed_at": "2026-10-18T14:16:06Z",
+      "name": "review",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-18T14:15:00Z",
+          "completed_at": "2026-10-18T14:15:21Z"
+        },
+        {
+          "name": "Prepare report directory",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-18T14:15:21Z",
+          "completed_at": "2026-10-18T14:15:21Z"
+        },
+        {
+          "name": "Diagnose trusted installation",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-18T14:15:21Z",
+          "completed_at": "2026-10-18T14:15:24Z"
+        },
+        {
+          "name": "Analyze immutable PR snapshot without executing it",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-18T14:15:24Z",
+          "completed_at": "2026-10-18T14:15:47Z"
+        },
+        {
+          "name": "Publish or update the single report comment",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-18T14:15:47Z",
+          "completed_at": "2026-10-18T14:15:53Z"
+        },
+        {
+          "name": "Actions summary",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-18T14:15:53Z",
+          "completed_at": "2026-10-18T14:15:53Z"
+        },
+        {
+          "name": "Preserve reports and diagnostics",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-18T14:15:53Z",
+          "completed_at": "2026-10-18T14:15:59Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-18T14:15:59Z",
+          "completed_at": "2026-10-18T14:15:59Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/metalice80/outline_t/check-runs/117697990130",
+      "labels": [
+        "self-hosted",
+        "ai-review"
+      ],
+      "runner_id": 2,
+      "runner_name": "outline-ai-review-sergey",
+      "runner_group_id": 1,
+      "runner_group_name": "Default"
+    }
+  ]
+}

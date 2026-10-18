@@ -1,5 +1,7 @@
 import argparse
 import logging
+import os
+import json
 from pathlib import Path
 import subprocess
 
@@ -8,7 +10,7 @@ from mcp.server.fastmcp import FastMCP
 from .documents import safe_files
 
 
-def create_server(root: Path, timeout: float = 10.0):
+def create_server(root: Path, timeout: float = 10.0, review_settings=None):
     server = FastMCP("outline-read-only", log_level="WARNING")
     root = root.resolve()
 
@@ -45,6 +47,10 @@ def create_server(root: Path, timeout: float = 10.0):
             files.append(name)
         return {"files": files, "truncated": False}
 
+    if review_settings is not None:
+        from .review_mcp import register_review_tools
+        register_review_tools(server, review_settings)
+
     return server
 
 
@@ -54,7 +60,10 @@ def main():
     parser.add_argument("--git-timeout", type=float, default=10)
     args = parser.parse_args()
     logging.basicConfig(level=logging.WARNING)
-    create_server(args.repo, args.git_timeout).run(transport="stdio")
+    from .config import Settings
+    data = os.environ.get("OUTLINE_REVIEW_SETTINGS")
+    review_settings = Settings(**json.loads(data)) if data else None
+    create_server(args.repo, args.git_timeout, review_settings).run(transport="stdio")
 
 
 if __name__ == "__main__":

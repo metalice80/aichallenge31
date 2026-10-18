@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "repo": "metalice80/outline_t",
+  "number": 102,
+  "status": "complete",
+  "created_at": "2026-10-18T13:14:05.384362+00:00",
+  "assistant": {
+    "version": "0.2.0",
+    "code_sha256": "7c4944f667b639bf7f548091c5b8b2691d4d222267a5a1c3a52029471da6d4b0"
+  },
+  "models": {
+    "bge-m3": {
+      "name": "bge-m3:latest",
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+    },
+    "qwen3:8b": {
+      "name": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+    }
+  },
+  "summary": "\u0412 PR \u0438\u0437\u043c\u0435\u043d\u0451\u043d \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 `key` \u0432 \u0444\u0443\u043d\u043a\u0446\u0438\u0438 `naturalSortBy`, \u0447\u0442\u043e \u043c\u043e\u0436\u0435\u0442 \u043f\u0440\u0438\u0432\u0435\u0441\u0442\u0438 \u043a \u043f\u043e\u0442\u0435\u0440\u0435 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0438 \u0441\u0442\u0440\u043e\u043a\u043e\u0432\u043e\u0433\u043e \u043a\u043b\u044e\u0447\u0430.",
+  "pr": {
+    "number": 102,
+    "state": "open",
+    "title": "Update shared/utils/naturalSort.ts",
+    "body": "Local evaluation of an isolated source change.",
+    "draft": false,
+    "author": "metalice80",
+    "changed_files": 1,
+    "repo": "metalice80/outline_t",
+    "base_repo": "metalice80/outline_t",
+    "base_sha": "ab19da8dbdecf180cce66f22da78a1f31734cae9",
+    "head_repo": "metalice80/outline_t",
+    "head_sha": "2c86bcbf53c60caed3871fe2ce0342c66c94c15d",
+    "merge_base_sha": "ab19da8dbdecf180cce66f22da78a1f31734cae9"
+  },
+  "findings": [
+    {
+      "category": "bug",
+      "severity": "high",
+      "title": "\u0423\u0434\u0430\u043b\u0435\u043d\u0438\u0435 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0438 \u0441\u0442\u0440\u043e\u043a\u043e\u0432\u043e\u0433\u043e \u043a\u043b\u044e\u0447\u0430 \u0432 `naturalSortBy`",
+      "description": "\u0412 PR \u0438\u0437\u043c\u0435\u043d\u0451\u043d \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 `key` \u0432 \u0444\u0443\u043d\u043a\u0446\u0438\u0438 `naturalSortBy` \u0441 `string | ((item: T) => string)` \u043d\u0430 `((item: T) => string)`. \u042d\u0442\u043e \u0443\u0434\u0430\u043b\u044f\u0435\u0442 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0443 \u0441\u0442\u0440\u043e\u043a\u043e\u0432\u043e\u0433\u043e \u043a\u043b\u044e\u0447\u0430, \u0447\u0442\u043e \u043c\u043e\u0436\u0435\u0442 \u043f\u0440\u0438\u0432\u0435\u0441\u0442\u0438 \u043a \u043e\u0448\u0438\u0431\u043a\u0430\u043c \u0432 \u043a\u043e\u0434\u0435, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043b \u044d\u0442\u043e\u0442 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440.",
+      "condition": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u0441\u0442\u0440\u043e\u043a\u043e\u0432\u043e\u0433\u043e \u043a\u043b\u044e\u0447\u0430 \u0432 `naturalSortBy`",
+      "consequence": "\u041f\u043e\u0442\u0435\u0440\u044f \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0438 \u0441\u0442\u0440\u043e\u043a\u043e\u0432\u043e\u0433\u043e \u043a\u043b\u044e\u0447\u0430, \u0447\u0442\u043e \u043c\u043e\u0436\u0435\u0442 \u043f\u0440\u0438\u0432\u0435\u0441\u0442\u0438 \u043a \u043e\u0448\u0438\u0431\u043a\u0430\u043c \u0432 \u043a\u043e\u0434\u0435, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043b \u044d\u0442\u043e\u0442 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440.",
+      "recommendation": "\u0412\u0435\u0440\u043d\u0443\u0442\u044c \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0443 \u0441\u0442\u0440\u043e\u043a\u043e\u0432\u043e\u0433\u043e \u043a\u043b\u044e\u0447\u0430 \u0432 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 `key`.",
+      "introduced_by": "\u0418\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435 \u0442\u0438\u043f\u0430 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u0430 `key` \u0441 `string | ((item: T) => string)` \u043d\u0430 `((item: T) => string)`",
+      "path": "shared/utils/naturalSort.ts",
+      "side": "new",
+      "start_line": 30,
+      "end_line": 30,
+      "sources": [
+        "S2"
+      ]
+    }
+  ],
+  "sources": {
+    "S1": {
+      "path": "shared/utils/naturalSort.ts",
+      "sha": "ab19da8dbdecf180cce66f22da78a1f31734cae9",
+      "start_line": 19,
+      "end_line": 41,
+      "text": "  keyOrCallback: string | ((item: T) => string)\n) {\n  const field =\n    typeof keyOrCallback === \"string\"\n      ? (item as Record<string, unknown>)[keyOrCallback]\n      : keyOrCallback(item);\n  return cleanValue(typeof field === \"string\" ? field : \"\");\n}\n\nfunction naturalSortBy<T extends object>(\n  items: T[],\n  key: string | ((item: T) => string),\n  sortOptions?: NaturalSortOptions\n): T[] {\n  if (!items) {\n    return [];\n  }\n  const sort = sortOptions\n    ? naturalSort({\n        caseSensitive: sortOptions.caseSensitive,\n        direction: sortOptions.direction === \"desc\" ? \"desc\" : undefined,\n      })\n    : sorter;\n",
+      "source_type": "code",
+      "symbol": "line-window",
+      "changed": true,
+      "fallback": false
+    },
+    "S2": {
+      "path": "shared/utils/naturalSort.ts",
+      "sha": "2c86bcbf53c60caed3871fe2ce0342c66c94c15d",
+      "start_line": 19,
+      "end_line": 41,
+      "text": "  keyOrCallback: string | ((item: T) => string)\n) {\n  const field =\n    typeof keyOrCallback === \"string\"\n      ? (item as Record<string, unknown>)[keyOrCallback]\n      : keyOrCallback(item);\n  return cleanValue(typeof field === \"string\" ? field : \"\");\n}\n\nfunction naturalSortBy<T extends object>(\n  items: T[],\n  key: (item: T) => string,\n  sortOptions?: NaturalSortOptions\n): T[] {\n  if (!items) {\n    return [];\n  }\n  const sort = sortOptions\n    ? naturalSort({\n        caseSensitive: sortOptions.caseSensitive,\n        direction: sortOptions.direction === \"desc\" ? \"desc\" : undefined,\n      })\n    : sorter;\n",
+      "source_type": "code",
+      "symbol": "line-window",
+      "changed": true,
+      "fallback": false
+    },
+    "S3": {
+      "path": "app/stores/GroupsStore.ts",
+      "sha": "2c86bcbf53c60caed3871fe2ce0342c66c94c15d",
+      "start_line": 1,
+      "end_line": 6,
+      "text": "import { override } from \"mobx\";\nimport naturalSort from \"@shared/utils/naturalSort\";\nimport Group from \"~/models/Group\";\nimport type { PaginationParams } from \"~/types\";\nimport type RootStore from \"./RootStore\";\nimport Store, { type PaginatedResponse } from \"./base/Store\";\n",
+      "source_type": "code",
+      "symbol": "",
+      "changed": false,
+      "fallback": false
+    },
+    "S4": {
+      "path": "shared/utils/collections.ts",
+      "sha": "2c86bcbf53c60caed3871fe2ce0342c66c94c15d",
+      "start_line": 1,
+      "end_line": 7,
+      "text": "import type { NavigationNode } from \"../types\";\nimport shallowEqual from \"./shallowEqual\";\nimport naturalSort from \"./naturalSort\";\n\ntype Sort = {\n  field: string;\n  direction: \"asc\" | \"desc\";\n",
+      "source_type": "code",
+      "symbol": "",
+      "changed": false,
+      "fallback": false
+    },
+    "S5": {
+      "path": "shared/utils/naturalSort.test.ts",
+      "sha": "2c86bcbf53c60caed3871fe2ce0342c66c94c15d",
+      "start_line": 1,
+      "end_line": 5,
+      "text": "import naturalSort from \"./naturalSort\";\n\ndescribe(\"#naturalSort\", () => {\n  it(\"should sort a list of objects by the given key\", () => {\n    const items = [\n",
+      "source_type": "code",
+      "symbol": "",
+      "changed": false,
+      "fallback": false
+    },
+    "S6": {
+      "path": "shared/utils/naturalSort.ts",
+      "sha": "2c86bcbf53c60caed3871fe2ce0342c66c94c15d",
+      "start_line": 28,
+      "end_line": 35,
+      "text": "function naturalSortBy<T extends object>(\n  items: T[],\n  key: (item: T) => string,\n  sortOptions?: NaturalSortOptions\n): T[] {\n  if (!items) {\n    return [];\n  }\n",
+      "source_type": "code",
+      "symbol": "naturalSortBy",
+      "changed": 1,
+      "fallback": 0
+    },
+    "S7": {
+      "path": "app/stores/GroupsStore.ts",
+      "sha": "2c86bcbf53c60caed3871fe2ce0342c66c94c15d",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "import naturalSort from \"@shared/utils/naturalSort\";\n",
+      "source_type": "code",
+      "symbol": "import_statement",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S8": {
+      "path": "shared/utils/collections.ts",
+      "sha": "2c86bcbf53c60caed3871fe2ce0342c66c94c15d",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "import naturalSort from \"./naturalSort\";\n",
+      "source_type": "code",
+      "symbol": "import_statement",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S9": {
+      "path": "shared/utils/naturalSort.test.ts",
+      "sha": "2c86bcbf53c60caed3871fe2ce0342c66c94c15d",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "import naturalSort from \"./naturalSort\";\n",
+      "source_type": "code",
+      "symbol": "import_statement",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S10": {
+      "path": "shared/utils/naturalSort.ts",
+      "sha": "2c86bcbf53c60caed3871fe2ce0342c66c94c15d",
+      "start_line": 17,
+      "end_line": 20,
+      "text": "function getSortByField<T extends object>(\n  item: T,\n  keyOrCallback: string | ((item: T) => string)\n) {\n",
+      "source_type": "code",
+      "symbol": "getSortByField",
+      "changed": 1,
+      "fallback": 0
+    }
+  },
+  "coverage": [
+    {
+      "path": "shared/utils/naturalSort.ts",
+      "status": "reviewed",
+      "reasons": []
+    }
+  ],
+  "limitations": [],
+  "rejected": [],
+  "batches": [
+    {
+      "path": "shared/utils/naturalSort.ts",
+      "status": "complete",
+      "sources": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8",
+        "S9",
+        "S10"
+      ]
+    }
+  ],
+  "api_files_incomplete": false,
+  "diff_origin": "local_git_merge_base_to_head",
+  "rag": {
+    "embedded": 2,
+    "reused": 113,
+    "files": 11,
+    "chunks": 115,
+    "snapshot_sha": "2c86bcbf53c60caed3871fe2ce0342c66c94c15d",
+    "limited": false
+  },
+  "result_version": "598a7e036e0ad14c7dfde9b09995eee209bb96cb5e85189ed079ac44d8a5085c"
+}

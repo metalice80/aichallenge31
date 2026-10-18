@@ -1,0 +1,68 @@
+{
+  "repo": "metalice80/outline_t",
+  "pr": 1,
+  "pr_url": "https://github.com/metalice80/outline_t/pull/1",
+  "workflow_commit": "74ad6720c476a76087dbf3205c495173d7a9b57b",
+  "pr_head": "5c4efcfde8b15eb9c616e05dd17483a4b166be63",
+  "runner": {
+    "id": 2,
+    "name": "outline-ai-review-sergey",
+    "version": "2.338.0",
+    "labels": [
+      "self-hosted",
+      "macOS",
+      "ARM64",
+      "ai-review"
+    ],
+    "runtime": "/Users/sergey/ai/outline-review-runtime",
+    "registered": true,
+    "running": true,
+    "service_installed": false,
+    "agreement_confirmed": true
+  },
+  "publication_enabled": true,
+  "comment": {
+    "id": 6250929201,
+    "url": "https://github.com/metalice80/outline_t/pull/1#issuecomment-6250929201",
+    "author": "github-actions[bot]",
+    "count": 1,
+    "head": "5c4efcfde8b15eb9c616e05dd17483a4b166be63",
+    "created_at": "2026-10-18T14:13:24Z",
+    "updated_at": "2026-10-18T14:20:01Z"
+  },
+  "runs": [
+    {
+      "id": 39133791220,
+      "event": "pull_request",
+      "conclusion": "success",
+      "report": "actions-first/review.json",
+      "action": "created"
+    },
+    {
+      "id": 39135121614,
+      "event": "pull_request",
+      "conclusion": "success",
+      "report": "actions-second/review.json",
+      "action": "updated"
+    },
+    {
+      "id": 39135463123,
+      "event": "workflow_dispatch",
+      "conclusion": "success",
+      "evidence": "actions-manual/"
+    }
+  ],
+  "stale_analysis": {
+    "status": "stale",
+    "exit_code": 1,
+    "evidence": "external-stale/review.json"
+  },
+  "stale_publication_live_test": false,
+  "outline_unchanged": true,
+  "limitations": [
+    "RAG limited to 80/2336 allowed files; partial coverage",
+    "Known Qwen3 false positives in earlier local evaluation",
+    "Runner not configured as an autostart service",
+    "Permanent public runner restricted to trusted-owner educational use"
+  ]
+}

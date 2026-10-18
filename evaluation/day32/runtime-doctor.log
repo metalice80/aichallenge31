@@ -1,0 +1,12 @@
+OK Git: /usr/bin/git
+OK Документы: ['README.md', 'docs/ARCHITECTURE.md', 'docs/CODE_OF_CONDUCT.md', 'docs/SECURITY.md', 'docs/SERVICES.md', 'docs/TRANSLATION.md']
+OK Embedding-модель: {'name': 'bge-m3:latest', 'digest': '7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab'}
+OK Модель ответов: {'name': 'qwen3:8b', 'digest': '500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41'}
+OK MCP/Git: {"branch": "main", "commit": "ebffdb7f7f1f966aa05739f7140e1aec09209475", "detached": false, "unborn": false}
+OK MCP/файлы: 80; усечён: True
+Ассистент: {'version': '0.2.0', 'code_sha256': '433370640b1a66fcc4b5373ac3a4c393ca5bbb97a43251feb8a21c2a3053148c'}; executable: /Users/sergey/ai/outline-review-runtime/venv/bin/outline-assistant
+OK каталог: /Users/sergey/ai/outline-review-runtime/git-cache
+OK каталог: /Users/sergey/ai/outline-review-runtime/rag-cache
+OK GitHub/MCP: repo=metalice80/outline_t, default_branch=main, authenticated=False, permissions=None
+НЕ ПРОВЕРЕНО runners: Нет действительной аутентификации GitHub.
+Публикация: включена; ожидаемый автор: github-actions[bot]

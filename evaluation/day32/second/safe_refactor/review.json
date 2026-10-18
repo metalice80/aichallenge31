@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "repo": "metalice80/outline_t",
+  "number": 103,
+  "status": "complete",
+  "created_at": "2026-10-18T13:14:20.095133+00:00",
+  "assistant": {
+    "version": "0.2.0",
+    "code_sha256": "7c4944f667b639bf7f548091c5b8b2691d4d222267a5a1c3a52029471da6d4b0"
+  },
+  "models": {
+    "bge-m3": {
+      "name": "bge-m3:latest",
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+    },
+    "qwen3:8b": {
+      "name": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+    }
+  },
+  "summary": "PR \u0432\u043d\u043e\u0441\u0438\u0442 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f \u0432 \u0444\u0443\u043d\u043a\u0446\u0438\u044e `shallowEqual`, \u043d\u043e \u043d\u0435 \u0432\u043d\u043e\u0441\u0438\u0442 \u043d\u043e\u0432\u044b\u0445 \u043e\u0448\u0438\u0431\u043e\u043a. \u0418\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b \u0438 \u043d\u0435 \u0432\u043b\u0438\u044f\u044e\u0442 \u043d\u0430 \u043f\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u0435 \u0444\u0443\u043d\u043a\u0446\u0438\u0438.",
+  "pr": {
+    "number": 103,
+    "state": "open",
+    "title": "Update shared/utils/shallowEqual.ts",
+    "body": "Local evaluation of an isolated source change.",
+    "draft": false,
+    "author": "metalice80",
+    "changed_files": 1,
+    "repo": "metalice80/outline_t",
+    "base_repo": "metalice80/outline_t",
+    "base_sha": "ab19da8dbdecf180cce66f22da78a1f31734cae9",
+    "head_repo": "metalice80/outline_t",
+    "head_sha": "b64e88047a7dbbf0f76abe9d086e2771c42c327c",
+    "merge_base_sha": "ab19da8dbdecf180cce66f22da78a1f31734cae9"
+  },
+  "findings": [],
+  "sources": {
+    "S1": {
+      "path": "shared/utils/shallowEqual.ts",
+      "sha": "ab19da8dbdecf180cce66f22da78a1f31734cae9",
+      "start_line": 1,
+      "end_line": 22,
+      "text": "/**\n * Check if two arrays have the same elements in the same order by reference.\n * Uses strict equality (===) rather than deep comparison, so object identity\n * is preserved \u2014 important for React.memo optimizations.\n *\n * @param a first array.\n * @param b second array.\n * @returns true if the arrays are shallowly equal.\n */\nexport default function shallowEqual<T>(a: T[], b: T[]): boolean {\n  if (a === b) {\n    return true;\n  }\n  if (a.length !== b.length) {\n    return false;\n  }\n  for (let i = 0; i < a.length; i++) {\n    if (a[i] !== b[i]) {\n      return false;\n    }\n  }\n  return true;\n",
+      "source_type": "code",
+      "symbol": "line-window",
+      "changed": true,
+      "fallback": false
+    },
+    "S2": {
+      "path": "shared/utils/shallowEqual.ts",
+      "sha": "b64e88047a7dbbf0f76abe9d086e2771c42c327c",
+      "start_line": 1,
+      "end_line": 23,
+      "text": "/**\n * Check if two arrays have the same elements in the same order by reference.\n * Uses strict equality (===) rather than deep comparison, so object identity\n * is preserved \u2014 important for React.memo optimizations.\n *\n * @param a first array.\n * @param b second array.\n * @returns true if the arrays are shallowly equal.\n */\nexport default function shallowEqual<T>(a: T[], b: T[]): boolean {\n  const sameReference = a === b;\n  if (sameReference) {\n    return true;\n  }\n  if (a.length !== b.length) {\n    return false;\n  }\n  for (let i = 0; i < a.length; i++) {\n    if (a[i] !== b[i]) {\n      return false;\n    }\n  }\n  return true;\n",
+      "source_type": "code",
+      "symbol": "line-window",
+      "changed": true,
+      "fallback": false
+    },
+    "S3": {
+      "path": "shared/utils/collections.ts",
+      "sha": "b64e88047a7dbbf0f76abe9d086e2771c42c327c",
+      "start_line": 1,
+      "end_line": 6,
+      "text": "import type { NavigationNode } from \"../types\";\nimport shallowEqual from \"./shallowEqual\";\nimport naturalSort from \"./naturalSort\";\n\ntype Sort = {\n  field: string;\n",
+      "source_type": "code",
+      "symbol": "",
+      "changed": false,
+      "fallback": false
+    },
+    "S4": {
+      "path": "shared/utils/collections.ts",
+      "sha": "b64e88047a7dbbf0f76abe9d086e2771c42c327c",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "import shallowEqual from \"./shallowEqual\";\n",
+      "source_type": "code",
+      "symbol": "import_statement",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S5": {
+      "path": "shared/utils/shallowEqual.ts",
+      "sha": "b64e88047a7dbbf0f76abe9d086e2771c42c327c",
+      "start_line": 10,
+      "end_line": 10,
+      "text": "export default function shallowEqual<T>(a: T[], b: T[]): boolean {\n",
+      "source_type": "code",
+      "symbol": "shallowEqual",
+      "changed": 1,
+      "fallback": 0
+    },
+    "S6": {
+      "path": "README.md",
+      "sha": "b64e88047a7dbbf0f76abe9d086e2771c42c327c",
+      "start_line": 1,
+      "end_line": 18,
+      "text": "<p align=\"center\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"./public/logos/outline-logo-dark.png\" height=\"29\">\n    <source media=\"(prefers-color-scheme: light)\" srcset=\"./public/logos/outline-logo-light.png\" height=\"29\">\n    <img src=\"./public/logos/outline-logo-light.png\" height=\"29\" alt=\"Outline\" />\n  </picture>\n</p>\n<p align=\"center\">\n  <i>A fast, collaborative, knowledge base for your team built using React and Node.js.<br/>Try out Outline using our hosted version at <a href=\"https://www.getoutline.com\">www.getoutline.com</a>.</i>\n  <br/>\n  <img width=\"1640\" alt=\"screenshot\" src=\"https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png\">\n</p>\n<p align=\"center\">\n  <a href=\"http://www.typescriptlang.org\" rel=\"nofollow\"><img src=\"https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg\" alt=\"TypeScript\"></a>\n  <a href=\"https://github.com/styled-components/styled-components\"><img src=\"https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg\" alt=\"Styled Components\"></a>\n  <a href=\"https://translate.getoutline.com/project/outline\" alt=\"Localized\"><img src=\"https://badges.crowdin.net/outline/localized.svg\"></a>\n</p>\n\n",
+      "source_type": "documentation",
+      "symbol": "",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S7": {
+      "path": "README.md",
+      "sha": "b64e88047a7dbbf0f76abe9d086e2771c42c327c",
+      "start_line": 111,
+      "end_line": 113,
+      "text": "# License\n\nOutline is [BSL 1.1 licensed](LICENSE).\n",
+      "source_type": "documentation",
+      "symbol": "",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S8": {
+      "path": "shared/utils/naturalSort.test.ts",
+      "sha": "b64e88047a7dbbf0f76abe9d086e2771c42c327c",
+      "start_line": 127,
+      "end_line": 137,
+      "text": "    expect(naturalSort(items, \"title\")).toEqual([\n      {\n        title: \"\ud83d\ude42 Document 1\",\n      },\n      {\n        title: \"\ud83c\udf54 Document 2\",\n      },\n      {\n        title: \"\ud83d\udc3b Document 3\",\n      },\n    ]);\n",
+      "source_type": "code",
+      "symbol": "expression_statement",
+      "changed": 0,
+      "fallback": 0
+    }
+  },
+  "coverage": [
+    {
+      "path": "shared/utils/shallowEqual.ts",
+      "status": "reviewed",
+      "reasons": []
+    }
+  ],
+  "limitations": [],
+  "rejected": [],
+  "batches": [
+    {
+      "path": "shared/utils/shallowEqual.ts",
+      "status": "complete",
+      "sources": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8"
+      ]
+    }
+  ],
+  "api_files_incomplete": false,
+  "diff_origin": "local_git_merge_base_to_head",
+  "rag": {
+    "embedded": 3,
+    "reused": 114,
+    "files": 11,
+    "chunks": 117,
+    "snapshot_sha": "b64e88047a7dbbf0f76abe9d086e2771c42c327c",
+    "limited": false
+  },
+  "result_version": "038cec30ab6109d493fd04b5d97b89b4fc56a9f6f4eddd367de70ee8573ee2f3"
+}

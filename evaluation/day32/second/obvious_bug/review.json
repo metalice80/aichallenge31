@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "repo": "metalice80/outline_t",
+  "number": 101,
+  "status": "complete",
+  "created_at": "2026-10-18T13:13:47.639073+00:00",
+  "assistant": {
+    "version": "0.2.0",
+    "code_sha256": "7c4944f667b639bf7f548091c5b8b2691d4d222267a5a1c3a52029471da6d4b0"
+  },
+  "models": {
+    "bge-m3": {
+      "name": "bge-m3:latest",
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+    },
+    "qwen3:8b": {
+      "name": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+    }
+  },
+  "summary": "\u0412 PR \u0432\u043d\u0435\u0441\u0435\u043d\u044b \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f \u0432 \u0444\u0443\u043d\u043a\u0446\u0438\u044e `shallowEqual`, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u043c\u043e\u0433\u0443\u0442 \u043f\u0440\u0438\u0432\u0435\u0441\u0442\u0438 \u043a \u043b\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u043e\u0448\u0438\u0431\u043a\u0435.",
+  "pr": {
+    "number": 101,
+    "state": "open",
+    "title": "Update shared/utils/shallowEqual.ts",
+    "body": "Local evaluation of an isolated source change.",
+    "draft": false,
+    "author": "metalice80",
+    "changed_files": 1,
+    "repo": "metalice80/outline_t",
+    "base_repo": "metalice80/outline_t",
+    "base_sha": "ab19da8dbdecf180cce66f22da78a1f31734cae9",
+    "head_repo": "metalice80/outline_t",
+    "head_sha": "970e560fb12f36748ce9ba91056a2d32c4614f6f",
+    "merge_base_sha": "ab19da8dbdecf180cce66f22da78a1f31734cae9"
+  },
+  "findings": [
+    {
+      "category": "bug",
+      "severity": "high",
+      "title": "\u041d\u0435\u043f\u0440\u0430\u0432\u0438\u043b\u044c\u043d\u043e\u0435 \u043f\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u0435 \u043f\u0440\u0438 \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0438 \u043c\u0430\u0441\u0441\u0438\u0432\u043e\u0432 \u0441 \u0440\u0430\u0437\u043d\u043e\u0439 \u0434\u043b\u0438\u043d\u043e\u0439",
+      "description": "\u0412 PR \u0438\u0437\u043c\u0435\u043d\u0451\u043d \u043a\u043e\u0434 \u0444\u0443\u043d\u043a\u0446\u0438\u0438 `shallowEqual`, \u0433\u0434\u0435 \u043f\u0440\u0438 \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0438 \u043c\u0430\u0441\u0441\u0438\u0432\u043e\u0432 \u0441 \u0440\u0430\u0437\u043d\u043e\u0439 \u0434\u043b\u0438\u043d\u043e\u0439 \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442\u0441\u044f `true` \u0432\u043c\u0435\u0441\u0442\u043e `false`. \u042d\u0442\u043e \u043f\u0440\u0438\u0432\u0435\u0434\u0451\u0442 \u043a \u043d\u0435\u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u043e\u043c\u0443 \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044e \u043c\u0430\u0441\u0441\u0438\u0432\u043e\u0432 \u0438 \u043c\u043e\u0436\u0435\u0442 \u0432\u044b\u0437\u0432\u0430\u0442\u044c \u043e\u0448\u0438\u0431\u043a\u0438 \u0432 \u043b\u043e\u0433\u0438\u043a\u0435 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f.",
+      "condition": "a.length !== b.length",
+      "consequence": "\u0424\u0443\u043d\u043a\u0446\u0438\u044f `shallowEqual` \u0431\u0443\u0434\u0435\u0442 \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0430\u0442\u044c `true` \u0434\u043b\u044f \u043c\u0430\u0441\u0441\u0438\u0432\u043e\u0432 \u0441 \u0440\u0430\u0437\u043d\u043e\u0439 \u0434\u043b\u0438\u043d\u043e\u0439, \u0447\u0442\u043e \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043b\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u043e\u0448\u0438\u0431\u043a\u043e\u0439.",
+      "recommendation": "\u0418\u0437\u043c\u0435\u043d\u0438\u0442\u044c \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u043c\u043e\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043d\u0430 `false` \u043f\u0440\u0438 \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0438 \u043c\u0430\u0441\u0441\u0438\u0432\u043e\u0432 \u0441 \u0440\u0430\u0437\u043d\u043e\u0439 \u0434\u043b\u0438\u043d\u043e\u0439.",
+      "introduced_by": "\u0412\u043c\u0435\u0441\u0442\u043e \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 `a.length !== b.length` \u0438 \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0435\u043d\u0438\u044f `false` \u0442\u0435\u043f\u0435\u0440\u044c \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442\u0441\u044f `true`, \u0447\u0442\u043e \u043d\u0430\u0440\u0443\u0448\u0430\u0435\u0442 \u043b\u043e\u0433\u0438\u043a\u0443 \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f.",
+      "path": "shared/utils/shallowEqual.ts",
+      "side": "new",
+      "start_line": 15,
+      "end_line": 15,
+      "sources": [
+        "S2"
+      ]
+    }
+  ],
+  "sources": {
+    "S1": {
+      "path": "shared/utils/shallowEqual.ts",
+      "sha": "ab19da8dbdecf180cce66f22da78a1f31734cae9",
+      "start_line": 10,
+      "end_line": 23,
+      "text": "export default function shallowEqual<T>(a: T[], b: T[]): boolean {\n  if (a === b) {\n    return true;\n  }\n  if (a.length !== b.length) {\n    return false;\n  }\n  for (let i = 0; i < a.length; i++) {\n    if (a[i] !== b[i]) {\n      return false;\n    }\n  }\n  return true;\n}\n",
+      "source_type": "code",
+      "symbol": "shallowEqual",
+      "changed": true,
+      "fallback": false
+    },
+    "S2": {
+      "path": "shared/utils/shallowEqual.ts",
+      "sha": "970e560fb12f36748ce9ba91056a2d32c4614f6f",
+      "start_line": 10,
+      "end_line": 23,
+      "text": "export default function shallowEqual<T>(a: T[], b: T[]): boolean {\n  if (a === b) {\n    return true;\n  }\n  if (a.length !== b.length) {\n    return true;\n  }\n  for (let i = 0; i < a.length; i++) {\n    if (a[i] !== b[i]) {\n      return false;\n    }\n  }\n  return true;\n}\n",
+      "source_type": "code",
+      "symbol": "shallowEqual",
+      "changed": true,
+      "fallback": false
+    },
+    "S3": {
+      "path": "shared/utils/collections.ts",
+      "sha": "970e560fb12f36748ce9ba91056a2d32c4614f6f",
+      "start_line": 1,
+      "end_line": 6,
+      "text": "import type { NavigationNode } from \"../types\";\nimport shallowEqual from \"./shallowEqual\";\nimport naturalSort from \"./naturalSort\";\n\ntype Sort = {\n  field: string;\n",
+      "source_type": "code",
+      "symbol": "",
+      "changed": false,
+      "fallback": false
+    },
+    "S4": {
+      "path": "shared/utils/collections.ts",
+      "sha": "970e560fb12f36748ce9ba91056a2d32c4614f6f",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "import shallowEqual from \"./shallowEqual\";\n",
+      "source_type": "code",
+      "symbol": "import_statement",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S5": {
+      "path": "shared/utils/shallowEqual.ts",
+      "sha": "970e560fb12f36748ce9ba91056a2d32c4614f6f",
+      "start_line": 10,
+      "end_line": 16,
+      "text": "export default function shallowEqual<T>(a: T[], b: T[]): boolean {\n  if (a === b) {\n    return true;\n  }\n  if (a.length !== b.length) {\n    return true;\n  }\n",
+      "source_type": "code",
+      "symbol": "shallowEqual",
+      "changed": 1,
+      "fallback": 0
+    },
+    "S6": {
+      "path": "README.md",
+      "sha": "970e560fb12f36748ce9ba91056a2d32c4614f6f",
+      "start_line": 1,
+      "end_line": 18,
+      "text": "<p align=\"center\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"./public/logos/outline-logo-dark.png\" height=\"29\">\n    <source media=\"(prefers-color-scheme: light)\" srcset=\"./public/logos/outline-logo-light.png\" height=\"29\">\n    <img src=\"./public/logos/outline-logo-light.png\" height=\"29\" alt=\"Outline\" />\n  </picture>\n</p>\n<p align=\"center\">\n  <i>A fast, collaborative, knowledge base for your team built using React and Node.js.<br/>Try out Outline using our hosted version at <a href=\"https://www.getoutline.com\">www.getoutline.com</a>.</i>\n  <br/>\n  <img width=\"1640\" alt=\"screenshot\" src=\"https://user-images.githubusercontent.com/380914/110356468-26374600-7fef-11eb-9f6a-f2cc2c8c6590.png\">\n</p>\n<p align=\"center\">\n  <a href=\"http://www.typescriptlang.org\" rel=\"nofollow\"><img src=\"https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg\" alt=\"TypeScript\"></a>\n  <a href=\"https://github.com/styled-components/styled-components\"><img src=\"https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg\" alt=\"Styled Components\"></a>\n  <a href=\"https://translate.getoutline.com/project/outline\" alt=\"Localized\"><img src=\"https://badges.crowdin.net/outline/localized.svg\"></a>\n</p>\n\n",
+      "source_type": "documentation",
+      "symbol": "",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S7": {
+      "path": "README.md",
+      "sha": "970e560fb12f36748ce9ba91056a2d32c4614f6f",
+      "start_line": 111,
+      "end_line": 113,
+      "text": "# License\n\nOutline is [BSL 1.1 licensed](LICENSE).\n",
+      "source_type": "documentation",
+      "symbol": "",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S8": {
+      "path": "shared/utils/naturalSort.test.ts",
+      "sha": "970e560fb12f36748ce9ba91056a2d32c4614f6f",
+      "start_line": 127,
+      "end_line": 137,
+      "text": "    expect(naturalSort(items, \"title\")).toEqual([\n      {\n        title: \"\ud83d\ude42 Document 1\",\n      },\n      {\n        title: \"\ud83c\udf54 Document 2\",\n      },\n      {\n        title: \"\ud83d\udc3b Document 3\",\n      },\n    ]);\n",
+      "source_type": "code",
+      "symbol": "expression_statement",
+      "changed": 0,
+      "fallback": 0
+    }
+  },
+  "coverage": [
+    {
+      "path": "shared/utils/shallowEqual.ts",
+      "status": "reviewed",
+      "reasons": []
+    }
+  ],
+  "limitations": [],
+  "rejected": [],
+  "batches": [
+    {
+      "path": "shared/utils/shallowEqual.ts",
+      "status": "complete",
+      "sources": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8"
+      ]
+    }
+  ],
+  "api_files_incomplete": false,
+  "diff_origin": "local_git_merge_base_to_head",
+  "rag": {
+    "embedded": 105,
+    "reused": 0,
+    "files": 11,
+    "chunks": 115,
+    "snapshot_sha": "970e560fb12f36748ce9ba91056a2d32c4614f6f",
+    "limited": false
+  },
+  "result_version": "e3900d55094c771a1e06f751d0e79d5189718dc3288ce9a48e76a73f172004ab"
+}

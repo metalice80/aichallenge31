@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "repo": "metalice80/outline_t",
+  "number": 1,
+  "status": "partial",
+  "created_at": "2026-10-18T14:15:24.407900+00:00",
+  "assistant": {
+    "version": "0.2.0",
+    "code_sha256": "433370640b1a66fcc4b5373ac3a4c393ca5bbb97a43251feb8a21c2a3053148c"
+  },
+  "models": {
+    "bge-m3": {
+      "name": "bge-m3:latest",
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+    },
+    "qwen3:8b": {
+      "name": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+    }
+  },
+  "summary": "PR \u0434\u043e\u0431\u0430\u0432\u043b\u044f\u0435\u0442 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439 \u0432 \u0444\u0443\u043d\u043a\u0446\u0438\u044e shallowEqual, \u043d\u043e \u043d\u0435 \u043c\u0435\u043d\u044f\u0435\u0442 \u043b\u043e\u0433\u0438\u043a\u0443 \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f \u043c\u0430\u0441\u0441\u0438\u0432\u043e\u0432. \u042d\u0442\u043e \u043d\u0435 \u0432\u043b\u0438\u044f\u0435\u0442 \u043d\u0430 \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u043e\u0441\u0442\u044c \u0444\u0443\u043d\u043a\u0446\u0438\u0438, \u043d\u043e \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u043f\u043e\u043b\u0435\u0437\u043d\u043e \u0434\u043b\u044f \u043f\u043e\u043d\u0438\u043c\u0430\u043d\u0438\u044f.",
+  "pr": {
+    "number": 1,
+    "state": "open",
+    "title": "test: Day 32 AI review integration \u2014 do not merge",
+    "body": "\u0423\u0447\u0435\u0431\u043d\u044b\u0439 PR \u0434\u043b\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0433\u043e \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0433\u043e AI-\u0440\u0435\u0432\u044c\u044e. \u041d\u0435 \u0441\u043b\u0438\u0432\u0430\u0442\u044c.\n\n\u0412 shared/utils/shallowEqual.ts \u043d\u0430\u043c\u0435\u0440\u0435\u043d\u043d\u043e \u0432\u043d\u0435\u0441\u0435\u043d\u0430 \u043b\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0440\u0435\u0433\u0440\u0435\u0441\u0441\u0438\u044f. \u041e\u0436\u0438\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u043f\u0443\u0441\u043a \u0434\u043e\u0432\u0435\u0440\u0435\u043d\u043d\u043e\u0433\u043e \u0430\u0441\u0441\u0438\u0441\u0442\u0435\u043d\u0442\u0430 \u0447\u0435\u0440\u0435\u0437 MCP/Ollama \u0438 \u043e\u0434\u0438\u043d \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439 github-actions[bot] \u0441 \u0442\u0435\u043a\u0443\u0449\u0438\u043c head SHA. \u041f\u043e\u0441\u043b\u0435 \u043f\u0435\u0440\u0432\u043e\u0433\u043e \u043e\u0442\u0447\u0451\u0442\u0430 \u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u043c \u043a\u043e\u043c\u043c\u0438\u0442\u043e\u043c \u043e\u0448\u0438\u0431\u043a\u0430 \u0431\u0443\u0434\u0435\u0442 \u0438\u0441\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0430: \u043f\u0440\u043e\u0432\u0435\u0440\u0438\u043c \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435 \u0442\u043e\u0433\u043e \u0436\u0435 comment ID.\n\n\u0418\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435 \u0441\u0434\u0435\u043b\u0430\u043d\u043e \u0432 \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u043e\u043c \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e\u043c checkout fork; \u0438\u0441\u0445\u043e\u0434\u043d\u0430\u044f \u0440\u0430\u0431\u043e\u0447\u0430\u044f \u043a\u043e\u043f\u0438\u044f Outline \u043d\u0435 \u0438\u0437\u043c\u0435\u043d\u044f\u043b\u0430\u0441\u044c.",
+    "draft": false,
+    "author": "metalice80",
+    "changed_files": 1,
+    "repo": "metalice80/outline_t",
+    "base_repo": "metalice80/outline_t",
+    "base_sha": "74ad6720c476a76087dbf3205c495173d7a9b57b",
+    "head_repo": "metalice80/outline_t",
+    "head_sha": "5c4efcfde8b15eb9c616e05dd17483a4b166be63",
+    "merge_base_sha": "74ad6720c476a76087dbf3205c495173d7a9b57b"
+  },
+  "findings": [],
+  "sources": {
+    "S1": {
+      "path": "shared/utils/shallowEqual.ts",
+      "sha": "74ad6720c476a76087dbf3205c495173d7a9b57b",
+      "start_line": 10,
+      "end_line": 23,
+      "text": "export default function shallowEqual<T>(a: T[], b: T[]): boolean {\n  if (a === b) {\n    return true;\n  }\n  if (a.length !== b.length) {\n    return false;\n  }\n  for (let i = 0; i < a.length; i++) {\n    if (a[i] !== b[i]) {\n      return false;\n    }\n  }\n  return true;\n}\n",
+      "source_type": "code",
+      "symbol": "shallowEqual",
+      "changed": true,
+      "fallback": false
+    },
+    "S2": {
+      "path": "shared/utils/shallowEqual.ts",
+      "sha": "5c4efcfde8b15eb9c616e05dd17483a4b166be63",
+      "start_line": 10,
+      "end_line": 24,
+      "text": "export default function shallowEqual<T>(a: T[], b: T[]): boolean {\n  if (a === b) {\n    return true;\n  }\n  // Arrays of different lengths cannot be equal.\n  if (a.length !== b.length) {\n    return false;\n  }\n  for (let i = 0; i < a.length; i++) {\n    if (a[i] !== b[i]) {\n      return false;\n    }\n  }\n  return true;\n}\n",
+      "source_type": "code",
+      "symbol": "shallowEqual",
+      "changed": true,
+      "fallback": false
+    },
+    "S3": {
+      "path": "app/hooks/useActionContext.tsx",
+      "sha": "5c4efcfde8b15eb9c616e05dd17483a4b166be63",
+      "start_line": 228,
+      "end_line": 236,
+      "text": "function useStableValue<T extends object>(value: T): T {\n  const ref = useRef(value);\n\n  const isEqual =\n    shallowEqual(Object.keys(ref.current), Object.keys(value)) &&\n    shallowEqual(Object.values(ref.current), Object.values(value));\n\n  if (!isEqual) {\n    ref.current = value;\n",
+      "source_type": "code",
+      "symbol": "",
+      "changed": false,
+      "fallback": false
+    },
+    "S4": {
+      "path": "app/hooks/useActionContext.tsx",
+      "sha": "5c4efcfde8b15eb9c616e05dd17483a4b166be63",
+      "start_line": 1,
+      "end_line": 9,
+      "text": "import type { ReactNode } from \"react\";\nimport { createContext, useContext, useMemo, useRef } from \"react\";\nimport { useTranslation } from \"react-i18next\";\nimport { useHistory } from \"react-router\";\nimport shallowEqual from \"@shared/utils/shallowEqual\";\nimport useStores from \"~/hooks/useStores\";\nimport type Model from \"~/models/base/Model\";\nimport type Policy from \"~/models/Policy\";\nimport type { ActionContext as ActionContextType } from \"~/types\";\n",
+      "source_type": "code",
+      "symbol": "",
+      "changed": false,
+      "fallback": false
+    },
+    "S5": {
+      "path": "app/hooks/useActionContext.tsx",
+      "sha": "5c4efcfde8b15eb9c616e05dd17483a4b166be63",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "import shallowEqual from \"@shared/utils/shallowEqual\";\n",
+      "source_type": "code",
+      "symbol": "import_statement",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S6": {
+      "path": "shared/utils/shallowEqual.ts",
+      "sha": "5c4efcfde8b15eb9c616e05dd17483a4b166be63",
+      "start_line": 10,
+      "end_line": 17,
+      "text": "export default function shallowEqual<T>(a: T[], b: T[]): boolean {\n  if (a === b) {\n    return true;\n  }\n  // Arrays of different lengths cannot be equal.\n  if (a.length !== b.length) {\n    return false;\n  }\n",
+      "source_type": "code",
+      "symbol": "shallowEqual",
+      "changed": 1,
+      "fallback": 0
+    },
+    "S7": {
+      "path": "shared/utils/ProsemirrorHelper.test.ts",
+      "sha": "5c4efcfde8b15eb9c616e05dd17483a4b166be63",
+      "start_line": 81,
+      "end_line": 83,
+      "text": "      expect(ProsemirrorHelper.getNodeHash(a)).not.toEqual(\n        ProsemirrorHelper.getNodeHash(b)\n      );\n",
+      "source_type": "code",
+      "symbol": "expression_statement",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S8": {
+      "path": "shared/utils/TextHelper.test.ts",
+      "sha": "5c4efcfde8b15eb9c616e05dd17483a4b166be63",
+      "start_line": 60,
+      "end_line": 60,
+      "text": "    it(\"should not split surrogate pairs\", () => {\n",
+      "source_type": "code",
+      "symbol": "expression_statement",
+      "changed": 0,
+      "fallback": 0
+    },
+    "S9": {
+      "path": "app/hooks/useActionContext.tsx",
+      "sha": "5c4efcfde8b15eb9c616e05dd17483a4b166be63",
+      "start_line": 231,
+      "end_line": 233,
+      "text": "  const isEqual =\n    shallowEqual(Object.keys(ref.current), Object.keys(value)) &&\n    shallowEqual(Object.values(ref.current), Object.values(value));\n",
+      "source_type": "code",
+      "symbol": "useStableValue",
+      "changed": 0,
+      "fallback": 0
+    }
+  },
+  "coverage": [
+    {
+      "path": "shared/utils/shallowEqual.ts",
+      "status": "reviewed",
+      "reasons": []
+    }
+  ],
+  "limitations": [
+    "\u041f\u043e\u0438\u0441\u043a \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0439/\u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0439 \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d review_max_search_files \u0438 12 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u0430\u043c\u0438.",
+    "RAG \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d 80 \u0438\u0437 2336 \u0440\u0430\u0437\u0440\u0435\u0448\u0451\u043d\u043d\u044b\u0445 \u0444\u0430\u0439\u043b\u043e\u0432 \u0441\u043d\u0438\u043c\u043a\u0430."
+  ],
+  "rejected": [],
+  "batches": [
+    {
+      "path": "shared/utils/shallowEqual.ts",
+      "status": "complete",
+      "sources": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8",
+        "S9"
+      ]
+    }
+  ],
+  "api_files_incomplete": false,
+  "diff_origin": "local_git_merge_base_to_head",
+  "rag": {
+    "embedded": 1,
+    "reused": 3775,
+    "files": 80,
+    "chunks": 3776,
+    "snapshot_sha": "5c4efcfde8b15eb9c616e05dd17483a4b166be63",
+    "limited": true
+  },
+  "result_version": "ead261416543a50d17b62da24c810c99a8d1c771bf3a2edb0f42bb1b106135bb"
+}

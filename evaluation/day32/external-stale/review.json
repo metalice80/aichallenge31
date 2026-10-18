@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "repo": "metalice80/outline_t",
+  "number": 1,
+  "status": "stale",
+  "created_at": "2026-10-18T14:18:14.653676+00:00",
+  "assistant": {
+    "version": "0.2.0",
+    "code_sha256": "433370640b1a66fcc4b5373ac3a4c393ca5bbb97a43251feb8a21c2a3053148c"
+  },
+  "models": {
+    "bge-m3": {
+      "name": "bge-m3:latest",
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+    },
+    "qwen3:8b": {
+      "name": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+    }
+  },
+  "summary": "",
+  "pr": {},
+  "findings": [],
+  "sources": {},
+  "coverage": [],
+  "limitations": [
+    "\u041e\u0448\u0438\u0431\u043a\u0430 MCP: MCP get_pr_info: Error executing tool get_pr_info: stale: head SHA PR \u043e\u0442\u043b\u0438\u0447\u0430\u0435\u0442\u0441\u044f \u043e\u0442 \u043e\u0436\u0438\u0434\u0430\u0435\u043c\u043e\u0433\u043e \u0441\u043e\u0431\u044b\u0442\u0438\u044f.. \u041f\u0440\u043e\u0432\u0435\u0440\u044c\u0442\u0435 repo_path, Git \u0438 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0443 \u043f\u0430\u043a\u0435\u0442\u0430; \u043f\u0440\u0438 \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e\u0441\u0442\u0438 \u0443\u0432\u0435\u043b\u0438\u0447\u044c\u0442\u0435 mcp_timeout."
+  ],
+  "rejected": [],
+  "batches": [],
+  "result_version": "1a26d63608565a285e737e293485c70543f0408ad5c2bb7dae76178689d02315"
+}
