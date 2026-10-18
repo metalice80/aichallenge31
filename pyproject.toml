@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling==1.32.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "outline-dev-assistant"
+version = "0.1.0"
+description = "Локальный RAG-ассистент по документации Outline с MCP"
+requires-python = ">=3.11"
+dependencies = ["mcp>=1.20,<2", "httpx>=0.28,<0.29", "numpy>=2.3,<3"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+outline-assistant = "outline_assistant.cli:main"
+outline-mcp = "outline_assistant.mcp_server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/outline_assistant"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

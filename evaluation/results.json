@@ -1,0 +1,1672 @@
+{
+  "started": "2026-10-18T09:18:35.766063+00:00",
+  "real_services": true,
+  "cases": [
+    {
+      "id": 1,
+      "question": "Что такое Outline и для кого он предназначен?",
+      "path": "README.md",
+      "anchor": "knowledge base",
+      "answer": true,
+      "rank": 2,
+      "retrieved": [
+        {
+          "path": "README.md",
+          "heading": "",
+          "lines": [
+            16,
+            22
+          ],
+          "score": 0.6808311939239502
+        },
+        {
+          "path": "README.md",
+          "heading": "",
+          "lines": [
+            1,
+            18
+          ],
+          "score": 0.6257835030555725
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Frontend",
+          "lines": [
+            5,
+            23
+          ],
+          "score": 0.6092267632484436
+        },
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation",
+          "lines": [
+            1,
+            4
+          ],
+          "score": 0.5820093154907227
+        },
+        {
+          "path": "README.md",
+          "heading": "Development / Debugging",
+          "lines": [
+            56,
+            62
+          ],
+          "score": 0.5685513019561768
+        }
+      ],
+      "actual_answer": "Ветка: main; commit: ebffdb7f7f1f966aa05739f7140e1aec09209475\n\nOutline — это приложение для совместной работы, предназначенное для команд. Оно позволяет создавать и управлять знаниями в виде структурированных документов. [S2]\n\nПользователи могут использовать hosted версию Outline по адресу getoutline.com, а для запуска собственной версии или внесения изменений в код необходимы исходные файлы. [S1]\n\nИсточники:\n[S1] README.md:16–22 — начало документа\n[S2] README.md:1–18 — начало документа",
+      "insufficient": false,
+      "update": {
+        "changed": 0,
+        "removed": 0,
+        "embedded": 0,
+        "reused": 37
+      },
+      "seconds": 11.92
+    },
+    {
+      "id": 2,
+      "question": "На чём построен frontend и чем он собирается?",
+      "path": "docs/ARCHITECTURE.md",
+      "anchor": "Vite",
+      "answer": true,
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Frontend",
+          "lines": [
+            5,
+            23
+          ],
+          "score": 0.6239874958992004
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture",
+          "lines": [
+            1,
+            4
+          ],
+          "score": 0.5890277028083801
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Shared",
+          "lines": [
+            55,
+            68
+          ],
+          "score": 0.5370580554008484
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Backend",
+          "lines": [
+            24,
+            47
+          ],
+          "score": 0.5338982343673706
+        },
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services",
+          "lines": [
+            1,
+            13
+          ],
+          "score": 0.5314303636550903
+        }
+      ],
+      "actual_answer": "Ветка: main; commit: ebffdb7f7f1f966aa05739f7140e1aec09209475\n\nFrontend Outline построен на React и собирается с использованием Vite. Для управления состоянием используется MobX, а для стилей — Styled Components. [S1]\n\nСтруктура проекта включает в себя папку app, где находятся компоненты, действия, модели и другие модули, связанные с фронтендом. [S1]\n\nИсточники:\n[S1] docs/ARCHITECTURE.md:5–23 — Architecture / Frontend",
+      "insufficient": false,
+      "update": {
+        "changed": 0,
+        "removed": 0,
+        "embedded": 0,
+        "reused": 37
+      },
+      "seconds": 7.26
+    },
+    {
+      "id": 3,
+      "question": "Какая библиотека управляет состоянием frontend?",
+      "path": "docs/ARCHITECTURE.md",
+      "anchor": "MobX",
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Frontend",
+          "lines": [
+            5,
+            23
+          ],
+          "score": 0.6179212331771851
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Backend",
+          "lines": [
+            24,
+            47
+          ],
+          "score": 0.5692430734634399
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture",
+          "lines": [
+            1,
+            4
+          ],
+          "score": 0.5276731848716736
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Shared",
+          "lines": [
+            55,
+            68
+          ],
+          "score": 0.5157431960105896
+        },
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services / Admin",
+          "lines": [
+            14,
+            18
+          ],
+          "score": 0.5126007199287415
+        }
+      ],
+      "seconds": 0.02
+    },
+    {
+      "id": 4,
+      "question": "Как организованы стили React-компонентов?",
+      "path": "docs/ARCHITECTURE.md",
+      "anchor": "Styled Components",
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Frontend",
+          "lines": [
+            5,
+            23
+          ],
+          "score": 0.6252790689468384
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Shared",
+          "lines": [
+            55,
+            68
+          ],
+          "score": 0.5810577273368835
+        },
+        {
+          "path": "README.md",
+          "heading": "",
+          "lines": [
+            1,
+            18
+          ],
+          "score": 0.5739721655845642
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture",
+          "lines": [
+            1,
+            4
+          ],
+          "score": 0.4857068955898285
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Backend",
+          "lines": [
+            24,
+            47
+          ],
+          "score": 0.4593832492828369
+        }
+      ],
+      "seconds": 0.02
+    },
+    {
+      "id": 5,
+      "question": "На каком фреймворке работает API-сервер и какая ORM используется?",
+      "path": "docs/ARCHITECTURE.md",
+      "anchor": "Koa",
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Backend",
+          "lines": [
+            24,
+            47
+          ],
+          "score": 0.6491628885269165
+        },
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services / Web",
+          "lines": [
+            19,
+            23
+          ],
+          "score": 0.5794652700424194
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Frontend",
+          "lines": [
+            5,
+            23
+          ],
+          "score": 0.5096379518508911
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture",
+          "lines": [
+            1,
+            4
+          ],
+          "score": 0.5042839050292969
+        },
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services",
+          "lines": [
+            1,
+            13
+          ],
+          "score": 0.4963293969631195
+        }
+      ],
+      "seconds": 0.02
+    },
+    {
+      "id": 6,
+      "question": "Что используется для очередей и асинхронных событий?",
+      "path": "docs/ARCHITECTURE.md",
+      "anchor": "Bull",
+      "rank": 2,
+      "retrieved": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Backend",
+          "lines": [
+            46,
+            54
+          ],
+          "score": 0.5567444562911987
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Backend",
+          "lines": [
+            24,
+            47
+          ],
+          "score": 0.5187466740608215
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture",
+          "lines": [
+            1,
+            4
+          ],
+          "score": 0.5099221467971802
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Frontend",
+          "lines": [
+            5,
+            23
+          ],
+          "score": 0.5006870627403259
+        },
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services / Worker",
+          "lines": [
+            29,
+            32
+          ],
+          "score": 0.4761165380477905
+        }
+      ],
+      "seconds": 0.01
+    },
+    {
+      "id": 7,
+      "question": "Где находится логика авторизации и на какой библиотеке она основана?",
+      "path": "docs/ARCHITECTURE.md",
+      "anchor": "cancan",
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Backend",
+          "lines": [
+            24,
+            47
+          ],
+          "score": 0.5371790528297424
+        },
+        {
+          "path": "docs/SECURITY.md",
+          "heading": "Security Policy",
+          "lines": [
+            1,
+            2
+          ],
+          "score": 0.46679070591926575
+        },
+        {
+          "path": "README.md",
+          "heading": "",
+          "lines": [
+            16,
+            22
+          ],
+          "score": 0.4472571611404419
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Shared",
+          "lines": [
+            55,
+            68
+          ],
+          "score": 0.43939486145973206
+        },
+        {
+          "path": "README.md",
+          "heading": "Development / Architecture",
+          "lines": [
+            51,
+            55
+          ],
+          "score": 0.4269523024559021
+        }
+      ],
+      "seconds": 0.01
+    },
+    {
+      "id": 8,
+      "question": "На чём основан общий текстовый редактор в shared?",
+      "path": "docs/ARCHITECTURE.md",
+      "anchor": "Prosemirror",
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Shared",
+          "lines": [
+            55,
+            68
+          ],
+          "score": 0.6070301532745361
+        },
+        {
+          "path": "README.md",
+          "heading": "",
+          "lines": [
+            1,
+            18
+          ],
+          "score": 0.5161685347557068
+        },
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation",
+          "lines": [
+            1,
+            4
+          ],
+          "score": 0.4951973557472229
+        },
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation / Translating strings",
+          "lines": [
+            13,
+            24
+          ],
+          "score": 0.4942876696586609
+        },
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services / Collaboration",
+          "lines": [
+            33,
+            45
+          ],
+          "score": 0.4895677864551544
+        }
+      ],
+      "seconds": 0.01
+    },
+    {
+      "id": 9,
+      "question": "Как включить HTTP-логи и какие форматы логов используются?",
+      "path": "README.md",
+      "anchor": "DEBUG=http",
+      "answer": true,
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "README.md",
+          "heading": "Development / Debugging",
+          "lines": [
+            56,
+            62
+          ],
+          "score": 0.622909665107727
+        },
+        {
+          "path": "README.md",
+          "heading": "",
+          "lines": [
+            1,
+            18
+          ],
+          "score": 0.5118269920349121
+        },
+        {
+          "path": "README.md",
+          "heading": "Development / Tests",
+          "lines": [
+            63,
+            90
+          ],
+          "score": 0.5071811079978943
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Backend",
+          "lines": [
+            24,
+            47
+          ],
+          "score": 0.49809613823890686
+        },
+        {
+          "path": "README.md",
+          "heading": "Development",
+          "lines": [
+            47,
+            50
+          ],
+          "score": 0.48916009068489075
+        }
+      ],
+      "actual_answer": "Ветка: main; commit: ebffdb7f7f1f966aa05739f7140e1aec09209475\n\nHTTP-логи можно включить, установив переменную окружения `DEBUG=http`. [S1]\n\nФорматы логов включают JSON для производства и простой вывод в консоль для разработки. [S1]\n\nИсточники:\n[S1] README.md:56–62 — Development / Debugging",
+      "insufficient": false,
+      "update": {
+        "changed": 0,
+        "removed": 0,
+        "embedded": 0,
+        "reused": 37
+      },
+      "seconds": 7.49
+    },
+    {
+      "id": 10,
+      "question": "Каким инструментом писать тесты, как их назвать и где разместить?",
+      "path": "README.md",
+      "anchor": ".test.ts",
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "README.md",
+          "heading": "Development / Tests",
+          "lines": [
+            63,
+            90
+          ],
+          "score": 0.5671963691711426
+        },
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation / Proofreading",
+          "lines": [
+            26,
+            31
+          ],
+          "score": 0.479001522064209
+        },
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation / Translating strings",
+          "lines": [
+            24,
+            25
+          ],
+          "score": 0.4745192229747772
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Shared",
+          "lines": [
+            55,
+            68
+          ],
+          "score": 0.467120885848999
+        },
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services / Collaboration",
+          "lines": [
+            33,
+            45
+          ],
+          "score": 0.4602817893028259
+        }
+      ],
+      "seconds": 0.02
+    },
+    {
+      "id": 11,
+      "question": "Как создать, применить и откатить миграцию базы данных?",
+      "path": "README.md",
+      "anchor": "yarn db:rollback",
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "README.md",
+          "heading": "Development / Migrations",
+          "lines": [
+            91,
+            106
+          ],
+          "score": 0.6318802237510681
+        },
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation / Translating strings",
+          "lines": [
+            13,
+            24
+          ],
+          "score": 0.4244649410247803
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Backend",
+          "lines": [
+            24,
+            47
+          ],
+          "score": 0.4218491315841675
+        },
+        {
+          "path": "README.md",
+          "heading": "Development",
+          "lines": [
+            47,
+            50
+          ],
+          "score": 0.41740405559539795
+        },
+        {
+          "path": "README.md",
+          "heading": "Contributing",
+          "lines": [
+            33,
+            46
+          ],
+          "score": 0.41650062799453735
+        }
+      ],
+      "seconds": 0.02
+    },
+    {
+      "id": 12,
+      "question": "Под какой лицензией распространяется Outline?",
+      "path": "README.md",
+      "anchor": "BSL 1.1",
+      "rank": 2,
+      "retrieved": [
+        {
+          "path": "README.md",
+          "heading": "",
+          "lines": [
+            16,
+            22
+          ],
+          "score": 0.6775980591773987
+        },
+        {
+          "path": "README.md",
+          "heading": "License",
+          "lines": [
+            111,
+            113
+          ],
+          "score": 0.6416734457015991
+        },
+        {
+          "path": "README.md",
+          "heading": "",
+          "lines": [
+            1,
+            18
+          ],
+          "score": 0.6395317912101746
+        },
+        {
+          "path": "README.md",
+          "heading": "Installation",
+          "lines": [
+            23,
+            32
+          ],
+          "score": 0.6191624402999878
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Frontend",
+          "lines": [
+            5,
+            23
+          ],
+          "score": 0.5668082237243652
+        }
+      ],
+      "seconds": 0.01
+    },
+    {
+      "id": 13,
+      "question": "Как выбрать запускаемые backend-сервисы через CLI или окружение?",
+      "path": "docs/SERVICES.md",
+      "anchor": "SERVICES",
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services",
+          "lines": [
+            1,
+            13
+          ],
+          "score": 0.671511173248291
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Backend",
+          "lines": [
+            24,
+            47
+          ],
+          "score": 0.5668379068374634
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Frontend",
+          "lines": [
+            5,
+            23
+          ],
+          "score": 0.5439164638519287
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Backend",
+          "lines": [
+            46,
+            54
+          ],
+          "score": 0.5122942924499512
+        },
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services / Collaboration",
+          "lines": [
+            33,
+            45
+          ],
+          "score": 0.5042563080787659
+        }
+      ],
+      "seconds": 0.02
+    },
+    {
+      "id": 14,
+      "question": "Для чего нужен сервис Admin и где его открыть?",
+      "path": "docs/SERVICES.md",
+      "anchor": "/admin",
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services / Admin",
+          "lines": [
+            14,
+            18
+          ],
+          "score": 0.6725717186927795
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Backend",
+          "lines": [
+            24,
+            47
+          ],
+          "score": 0.5288118720054626
+        },
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services / Collaboration",
+          "lines": [
+            33,
+            45
+          ],
+          "score": 0.5140632390975952
+        },
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services / Web",
+          "lines": [
+            19,
+            23
+          ],
+          "score": 0.5138630270957947
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Frontend",
+          "lines": [
+            5,
+            23
+          ],
+          "score": 0.504474401473999
+        }
+      ],
+      "seconds": 0.01
+    },
+    {
+      "id": 15,
+      "question": "Сколько процессов Worker требуется для обработки очередей?",
+      "path": "docs/SERVICES.md",
+      "anchor": "At least one worker",
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services / Worker",
+          "lines": [
+            29,
+            32
+          ],
+          "score": 0.6997107863426208
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Backend",
+          "lines": [
+            46,
+            54
+          ],
+          "score": 0.49823954701423645
+        },
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services",
+          "lines": [
+            1,
+            13
+          ],
+          "score": 0.49310171604156494
+        },
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services / Web",
+          "lines": [
+            19,
+            23
+          ],
+          "score": 0.4739351272583008
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Backend",
+          "lines": [
+            24,
+            47
+          ],
+          "score": 0.4715801477432251
+        }
+      ],
+      "seconds": 0.01
+    },
+    {
+      "id": 16,
+      "question": "Что настроить, если collaboration-сервис размещён на отдельном домене?",
+      "path": "docs/SERVICES.md",
+      "anchor": "COLLABORATION_URL",
+      "answer": true,
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services / Collaboration",
+          "lines": [
+            33,
+            45
+          ],
+          "score": 0.686046302318573
+        },
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services",
+          "lines": [
+            1,
+            13
+          ],
+          "score": 0.5262202024459839
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Shared",
+          "lines": [
+            55,
+            68
+          ],
+          "score": 0.5172916650772095
+        },
+        {
+          "path": "README.md",
+          "heading": "Development",
+          "lines": [
+            47,
+            50
+          ],
+          "score": 0.5145291090011597
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Backend",
+          "lines": [
+            24,
+            47
+          ],
+          "score": 0.5050108432769775
+        }
+      ],
+      "actual_answer": "Ветка: main; commit: ebffdb7f7f1f966aa05739f7140e1aec09209475\n\nЕсли collaboration-сервис размещён на отдельном домене, необходимо установить переменную окружения `COLLABORATION_URL` в значение публичного URL-адреса, на который он доступен. Например, если приложение находится по адресу `https://docs.example.com`, то `COLLABORATION_URL` может быть `wss://docs-collaboration.example.com`. [S1]\n\nИсточники:\n[S1] docs/SERVICES.md:33–45 — Backend Services / Collaboration",
+      "insufficient": false,
+      "update": {
+        "changed": 0,
+        "removed": 0,
+        "embedded": 0,
+        "reused": 37
+      },
+      "seconds": 6.89
+    },
+    {
+      "id": 17,
+      "question": "Куда сообщать об уязвимости в Outline? Не выводи URL, назови канал обращения.",
+      "path": "docs/SECURITY.md",
+      "anchor": "GitHub",
+      "answer": true,
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "docs/SECURITY.md",
+          "heading": "Security Policy / Reporting a Vulnerability",
+          "lines": [
+            3,
+            9
+          ],
+          "score": 0.7392022609710693
+        },
+        {
+          "path": "README.md",
+          "heading": "Development / Debugging",
+          "lines": [
+            56,
+            62
+          ],
+          "score": 0.6386316418647766
+        },
+        {
+          "path": "README.md",
+          "heading": "",
+          "lines": [
+            16,
+            22
+          ],
+          "score": 0.6149019002914429
+        },
+        {
+          "path": "README.md",
+          "heading": "",
+          "lines": [
+            1,
+            18
+          ],
+          "score": 0.6111488342285156
+        },
+        {
+          "path": "README.md",
+          "heading": "Development",
+          "lines": [
+            47,
+            50
+          ],
+          "score": 0.5837687849998474
+        }
+      ],
+      "actual_answer": "Ветка: main; commit: ebffdb7f7f1f966aa05739f7140e1aec09209475\n\nДля сообщения об уязвимости в Outline необходимо использовать GitHub. [S1]\n\nИсточники:\n[S1] docs/SECURITY.md:3–9 — Security Policy / Reporting a Vulnerability",
+      "insufficient": false,
+      "update": {
+        "changed": 0,
+        "removed": 0,
+        "embedded": 0,
+        "reused": 37
+      },
+      "seconds": 5.49
+    },
+    {
+      "id": 18,
+      "question": "Кому сообщать об уязвимости в сторонней зависимости?",
+      "path": "docs/SECURITY.md",
+      "anchor": "third-party",
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "docs/SECURITY.md",
+          "heading": "Security Policy / Reporting a Vulnerability",
+          "lines": [
+            3,
+            9
+          ],
+          "score": 0.6801930665969849
+        },
+        {
+          "path": "docs/CODE_OF_CONDUCT.md",
+          "heading": "Contributor Covenant Code of Conduct / Enforcement",
+          "lines": [
+            35,
+            40
+          ],
+          "score": 0.5585334300994873
+        },
+        {
+          "path": "README.md",
+          "heading": "Development / Debugging",
+          "lines": [
+            56,
+            62
+          ],
+          "score": 0.48410165309906006
+        },
+        {
+          "path": "README.md",
+          "heading": "Contributing",
+          "lines": [
+            33,
+            46
+          ],
+          "score": 0.4768386483192444
+        },
+        {
+          "path": "README.md",
+          "heading": "Development",
+          "lines": [
+            47,
+            50
+          ],
+          "score": 0.4756218492984772
+        }
+      ],
+      "seconds": 0.02
+    },
+    {
+      "id": 19,
+      "question": "Какой язык интерфейса используется по умолчанию?",
+      "path": "docs/TRANSLATION.md",
+      "anchor": "American English",
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation",
+          "lines": [
+            1,
+            4
+          ],
+          "score": 0.6419476270675659
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Frontend",
+          "lines": [
+            5,
+            23
+          ],
+          "score": 0.5174782872200012
+        },
+        {
+          "path": "README.md",
+          "heading": "",
+          "lines": [
+            1,
+            18
+          ],
+          "score": 0.5089426040649414
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture",
+          "lines": [
+            1,
+            4
+          ],
+          "score": 0.4953663945198059
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "heading": "Architecture / Shared",
+          "lines": [
+            55,
+            68
+          ],
+          "score": 0.49279043078422546
+        }
+      ],
+      "seconds": 0.01
+    },
+    {
+      "id": 20,
+      "question": "Где управляют переводами и как они попадают в релиз?",
+      "path": "docs/TRANSLATION.md",
+      "anchor": "CrowdIn",
+      "answer": true,
+      "rank": 2,
+      "retrieved": [
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation / Release",
+          "lines": [
+            32,
+            34
+          ],
+          "score": 0.6056172847747803
+        },
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation / Translating strings",
+          "lines": [
+            13,
+            24
+          ],
+          "score": 0.5659806728363037
+        },
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation / Externalizing strings",
+          "lines": [
+            5,
+            12
+          ],
+          "score": 0.5399250984191895
+        },
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation / Proofreading",
+          "lines": [
+            26,
+            31
+          ],
+          "score": 0.527849555015564
+        },
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation",
+          "lines": [
+            1,
+            4
+          ],
+          "score": 0.5211423635482788
+        }
+      ],
+      "actual_answer": "Ветка: main; commit: ebffdb7f7f1f966aa05739f7140e1aec09209475\n\nПереводы управляются через CrowdIn, где отслеживаются строки, которые еще не переведены, и автоматически синхронизируются с кодовой базой. [S2]\n\nОбновленные переводы автоматически создаются в виде PR в кодовую базу ботом и регулярно объединяются, чтобы новые переводы появлялись в следующем выпуске Outline. [S1]\n\nИсточники:\n[S1] docs/TRANSLATION.md:32–34 — Translation / Release\n[S2] docs/TRANSLATION.md:13–24 — Translation / Translating strings",
+      "insufficient": false,
+      "update": {
+        "changed": 0,
+        "removed": 0,
+        "embedded": 0,
+        "reused": 37
+      },
+      "seconds": 7.09
+    },
+    {
+      "id": 21,
+      "question": "Как стать proof reader переводов и что делает этот участник?",
+      "path": "docs/TRANSLATION.md",
+      "anchor": "proof reader",
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation / Proofreading",
+          "lines": [
+            26,
+            31
+          ],
+          "score": 0.6818419098854065
+        },
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation / Translating strings",
+          "lines": [
+            24,
+            25
+          ],
+          "score": 0.5507646799087524
+        },
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation / Translating strings",
+          "lines": [
+            13,
+            24
+          ],
+          "score": 0.5088057518005371
+        },
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation / Release",
+          "lines": [
+            32,
+            34
+          ],
+          "score": 0.4837765395641327
+        },
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation / Externalizing strings",
+          "lines": [
+            5,
+            12
+          ],
+          "score": 0.4745422899723053
+        }
+      ],
+      "seconds": 0.02
+    },
+    {
+      "id": 22,
+      "question": "Куда сообщить о нарушениях кодекса поведения сообщества?",
+      "path": "docs/CODE_OF_CONDUCT.md",
+      "anchor": "hello@getoutline.com",
+      "rank": 1,
+      "retrieved": [
+        {
+          "path": "docs/CODE_OF_CONDUCT.md",
+          "heading": "Contributor Covenant Code of Conduct / Enforcement",
+          "lines": [
+            35,
+            40
+          ],
+          "score": 0.627495288848877
+        },
+        {
+          "path": "docs/CODE_OF_CONDUCT.md",
+          "heading": "Contributor Covenant Code of Conduct / Our Standards",
+          "lines": [
+            7,
+            24
+          ],
+          "score": 0.560897946357727
+        },
+        {
+          "path": "docs/CODE_OF_CONDUCT.md",
+          "heading": "Contributor Covenant Code of Conduct",
+          "lines": [
+            1,
+            2
+          ],
+          "score": 0.5554232597351074
+        },
+        {
+          "path": "docs/CODE_OF_CONDUCT.md",
+          "heading": "Contributor Covenant Code of Conduct / Scope",
+          "lines": [
+            31,
+            34
+          ],
+          "score": 0.5549576878547668
+        },
+        {
+          "path": "docs/SECURITY.md",
+          "heading": "Security Policy / Reporting a Vulnerability",
+          "lines": [
+            3,
+            9
+          ],
+          "score": 0.5482997894287109
+        }
+      ],
+      "seconds": 0.01
+    },
+    {
+      "id": 23,
+      "question": "Какая точная минимальная версия PostgreSQL требуется для этого коммита?",
+      "path": null,
+      "anchor": null,
+      "answer": true,
+      "rank": null,
+      "retrieved": [
+        {
+          "path": "README.md",
+          "heading": "",
+          "lines": [
+            1,
+            18
+          ],
+          "score": 0.43991678953170776
+        },
+        {
+          "path": "README.md",
+          "heading": "Contributing",
+          "lines": [
+            33,
+            46
+          ],
+          "score": 0.4319525361061096
+        },
+        {
+          "path": "docs/CODE_OF_CONDUCT.md",
+          "heading": "Contributor Covenant Code of Conduct / Attribution",
+          "lines": [
+            41,
+            46
+          ],
+          "score": 0.41695624589920044
+        },
+        {
+          "path": "README.md",
+          "heading": "License",
+          "lines": [
+            111,
+            113
+          ],
+          "score": 0.41129398345947266
+        },
+        {
+          "path": "README.md",
+          "heading": "Development",
+          "lines": [
+            47,
+            50
+          ],
+          "score": 0.4088069200515747
+        }
+      ],
+      "actual_answer": "Ветка: main; commit: ebffdb7f7f1f966aa05739f7140e1aec09209475\n\nВ предоставленных документах нет информации о минимальной версии PostgreSQL, необходимой для указанного коммита.\n\nПодтверждающих источников в предоставленной документации нет.",
+      "insufficient": true,
+      "update": {
+        "changed": 0,
+        "removed": 0,
+        "embedded": 0,
+        "reused": 37
+      },
+      "seconds": 5.84
+    },
+    {
+      "id": 24,
+      "question": "Приведи полный production env-файл со всеми обязательными переменными и значениями.",
+      "path": null,
+      "anchor": null,
+      "answer": true,
+      "rank": null,
+      "retrieved": [
+        {
+          "path": "README.md",
+          "heading": "Development / Tests",
+          "lines": [
+            63,
+            90
+          ],
+          "score": 0.44623470306396484
+        },
+        {
+          "path": "README.md",
+          "heading": "Installation",
+          "lines": [
+            23,
+            32
+          ],
+          "score": 0.4293215274810791
+        },
+        {
+          "path": "docs/SERVICES.md",
+          "heading": "Backend Services / Worker",
+          "lines": [
+            29,
+            32
+          ],
+          "score": 0.42045876383781433
+        },
+        {
+          "path": "README.md",
+          "heading": "Activity",
+          "lines": [
+            107,
+            110
+          ],
+          "score": 0.41239744424819946
+        },
+        {
+          "path": "README.md",
+          "heading": "Development",
+          "lines": [
+            47,
+            50
+          ],
+          "score": 0.4107036888599396
+        }
+      ],
+      "actual_answer": "Ветка: main; commit: ebffdb7f7f1f966aa05739f7140e1aec09209475\n\nВ документации не указано содержимое production env-файла с обязательными переменными и значениями.\n\nПодтверждающих источников в предоставленной документации нет.",
+      "insufficient": true,
+      "update": {
+        "changed": 0,
+        "removed": 0,
+        "embedded": 0,
+        "reused": 37
+      },
+      "seconds": 13.87
+    },
+    {
+      "id": 25,
+      "question": "Сколько долларов стоит облачный тариф Outline для 15 пользователей сегодня?",
+      "path": null,
+      "anchor": null,
+      "answer": true,
+      "rank": null,
+      "retrieved": [
+        {
+          "path": "README.md",
+          "heading": "",
+          "lines": [
+            1,
+            18
+          ],
+          "score": 0.5297170877456665
+        },
+        {
+          "path": "README.md",
+          "heading": "",
+          "lines": [
+            16,
+            22
+          ],
+          "score": 0.5167601704597473
+        },
+        {
+          "path": "README.md",
+          "heading": "License",
+          "lines": [
+            111,
+            113
+          ],
+          "score": 0.5054588913917542
+        },
+        {
+          "path": "README.md",
+          "heading": "Installation",
+          "lines": [
+            23,
+            32
+          ],
+          "score": 0.5010749101638794
+        },
+        {
+          "path": "docs/TRANSLATION.md",
+          "heading": "Translation",
+          "lines": [
+            1,
+            4
+          ],
+          "score": 0.4688545763492584
+        }
+      ],
+      "actual_answer": "Ветка: main; commit: ebffdb7f7f1f966aa05739f7140e1aec09209475\n\nДокументация не предоставляет информацию о стоимости облачного тарифа Outline для 15 пользователей.\n\nПодтверждающих источников в предоставленной документации нет.",
+      "insufficient": true,
+      "update": {
+        "changed": 0,
+        "removed": 0,
+        "embedded": 0,
+        "reused": 37
+      },
+      "seconds": 5.83
+    }
+  ],
+  "outline_before": {
+    "head": "ebffdb7f7f1f966aa05739f7140e1aec09209475",
+    "branch": "main",
+    "status": "",
+    "documents": {
+      "README.md": "7154c82222bac1e0e08dafee7a2a9980f6c9748c296a7a7eede82c284b775e94",
+      "docs/ARCHITECTURE.md": "f365206cae6fa735d7c2a1887aeba093fff6576b4ad4cafc6a1c5fec4f1b7dd6",
+      "docs/CODE_OF_CONDUCT.md": "7a824e72be48a842d528fa463bd632922d7a05e187d82dcadde9ce54b9d64f95",
+      "docs/SECURITY.md": "adf9a654604b6a0ef5dd801d91e032545dbe6289ebe72b432a812931a7a73355",
+      "docs/SERVICES.md": "3ed76a2c674c6144217325dc3ca95e75b659988d994931d7fb40d42834d3d44f",
+      "docs/TRANSLATION.md": "b65065291a3559f6ade2449ff98383ff588d54adb524dd248cb09ac69823d428"
+    }
+  },
+  "models": {
+    "bge-m3": {
+      "name": "bge-m3:latest",
+      "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+    },
+    "qwen3:8b": {
+      "name": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41"
+    }
+  },
+  "index_update": {
+    "changed": 0,
+    "removed": 0,
+    "embedded": 0,
+    "reused": 37
+  },
+  "index": {
+    "documents": 6,
+    "chunks": 37,
+    "dimension": 1024
+  },
+  "mcp_git": {
+    "branch": "main",
+    "commit": "ebffdb7f7f1f966aa05739f7140e1aec09209475",
+    "detached": false,
+    "unborn": false
+  },
+  "mcp_files": {
+    "files": [
+      ".dockerignore",
+      ".env.development",
+      ".env.sample",
+      ".env.test",
+      ".gitignore",
+      ".nvmrc",
+      ".oxfmtrc.json",
+      ".oxlintrc.json",
+      ".sequelizerc",
+      ".swcrc",
+      ".yarnrc.yml",
+      "AGENTS.md",
+      "Dockerfile",
+      "Dockerfile.base",
+      "LICENSE",
+      "Makefile",
+      "Procfile",
+      "README.md",
+      "app.json",
+      "build.js",
+      "crowdin.yml",
+      "docker-compose.yml",
+      "i18next-parser.config.js",
+      "lint-staged.config.mjs",
+      "package.json",
+      "relativeci.config.js",
+      "tsconfig.json",
+      "vite.config.mts",
+      "vitest.config.mts",
+      "vitest.d.ts",
+      "yarn.lock",
+      ".claude/skills/verify-outline/SKILL.md",
+      ".claude/skills/verify-outline/features/README.md",
+      ".claude/skills/verify-outline/features/collections.md",
+      ".claude/skills/verify-outline/features/documents.md",
+      ".claude/skills/verify-outline/features/search.md",
+      ".claude/skills/verify-outline/features/sharing.md",
+      ".claude/skills/verify-outline/features/workspace-setup.md",
+      ".claude/skills/verify-outline/journeys/create-collection.mjs",
+      ".claude/skills/verify-outline/journeys/create-document.mjs",
+      ".claude/skills/verify-outline/journeys/search.mjs",
+      ".claude/skills/verify-outline/journeys/setup-workspace.mjs",
+      ".claude/skills/verify-outline/journeys/share-public.mjs",
+      ".claude/skills/verify-outline/scripts/drive.mjs",
+      ".claude/skills/verify-outline/scripts/verify-outline.sh",
+      ".github/FUNDING.yml",
+      ".github/actionlint.yaml",
+      ".github/auto_assign.yml",
+      ".github/config.yml",
+      ".github/dependabot.yml",
+      ".github/no-response.yml",
+      ".github/ISSUE_TEMPLATE/bug_report.yml",
+      ".github/ISSUE_TEMPLATE/config.yml",
+      ".github/actions/install/action.yml",
+      ".github/workflows/auto-close-prs.yml",
+      ".github/workflows/calibreapp-image-actions.yml",
+      ".github/workflows/ci.yml",
+      ".github/workflows/close-translation-prs.yml",
+      ".github/workflows/codeql-analysis.yml",
+      ".github/workflows/docker-build.yml",
+      ".github/workflows/docker-nightly.yml",
+      ".github/workflows/docker.yml",
+      ".github/workflows/stale.yml",
+      ".github/workflows/update-node.yml",
+      ".husky/pre-commit",
+      ".oxlint/bundle.mjs",
+      ".oxlint/mobx.mjs",
+      ".vscode/settings.json",
+      "__mocks__/console.js",
+      "__mocks__/ctx.js",
+      "__mocks__/fileMock.js",
+      "__mocks__/localStorage.ts",
+      "__mocks__/react-medium-image-zoom.js",
+      "__mocks__/window.js",
+      "app/.oxlintrc.json",
+      "app/env.ts",
+      "app/index.tsx",
+      "app/types.ts",
+      "app/actions/index.ts",
+      "app/actions/root.ts"
+    ],
+    "truncated": true
+  },
+  "metrics": {
+    "answerable": 22,
+    "hit_at_1": 0.8181818181818182,
+    "hit_at_5": 1.0,
+    "mrr_at_5": 0.9090909090909091,
+    "real_answers": 9,
+    "answer_errors": 0
+  },
+  "temporary_repo": [
+    {
+      "stage": "initial",
+      "expected": "ALPHA-731",
+      "actual_answer": "Ветка: main; commit: eb0a2f76767912bee0bdbfe0a4372b066ca39a1d\n\nТекущий код стенда указан как ALPHA-731. [S1]\n\nИсточники:\n[S1] README.md:1–3 — Учебный проект",
+      "update": {
+        "changed": 1,
+        "removed": 0,
+        "embedded": 1,
+        "reused": 0
+      },
+      "passed": true
+    },
+    {
+      "stage": "unchanged",
+      "expected": "ALPHA-731",
+      "actual_answer": "Ветка: main; commit: eb0a2f76767912bee0bdbfe0a4372b066ca39a1d\n\nТекущий код стенда указан как ALPHA-731. [S1]\n\nИсточники:\n[S1] README.md:1–3 — Учебный проект",
+      "update": {
+        "changed": 0,
+        "removed": 0,
+        "embedded": 0,
+        "reused": 1
+      },
+      "passed": true
+    },
+    {
+      "stage": "uncommitted_edit",
+      "expected": "BETA-942",
+      "actual_answer": "Ветка: main; commit: eb0a2f76767912bee0bdbfe0a4372b066ca39a1d\n\nТекущий код стенда указан как BETA-942. [S1]\n\nИсточники:\n[S1] README.md:1–3 — Учебный проект",
+      "update": {
+        "changed": 1,
+        "removed": 0,
+        "embedded": 1,
+        "reused": 0
+      },
+      "passed": true
+    },
+    {
+      "stage": "same_docs_new_branch",
+      "expected": "BETA-942",
+      "actual_answer": "Ветка: feature; commit: bd94c251d5412aa02430fa07dcc611092341b9d9\n\nТекущий код стенда указан как BETA-942. [S1]\n\nИсточники:\n[S1] README.md:1–3 — Учебный проект",
+      "update": {
+        "changed": 0,
+        "removed": 0,
+        "embedded": 0,
+        "reused": 1
+      },
+      "passed": true
+    },
+    {
+      "stage": "detached_main",
+      "expected": "ALPHA-731",
+      "actual_answer": "Ветка: detached HEAD; commit: eb0a2f76767912bee0bdbfe0a4372b066ca39a1d\n\nТекущий код стенда указан как ALPHA-731. [S1]\n\nИсточники:\n[S1] README.md:1–3 — Учебный проект",
+      "update": {
+        "changed": 1,
+        "removed": 0,
+        "embedded": 1,
+        "reused": 0
+      },
+      "passed": true
+    }
+  ],
+  "outline_after": {
+    "head": "ebffdb7f7f1f966aa05739f7140e1aec09209475",
+    "branch": "main",
+    "status": "",
+    "documents": {
+      "README.md": "7154c82222bac1e0e08dafee7a2a9980f6c9748c296a7a7eede82c284b775e94",
+      "docs/ARCHITECTURE.md": "f365206cae6fa735d7c2a1887aeba093fff6576b4ad4cafc6a1c5fec4f1b7dd6",
+      "docs/CODE_OF_CONDUCT.md": "7a824e72be48a842d528fa463bd632922d7a05e187d82dcadde9ce54b9d64f95",
+      "docs/SECURITY.md": "adf9a654604b6a0ef5dd801d91e032545dbe6289ebe72b432a812931a7a73355",
+      "docs/SERVICES.md": "3ed76a2c674c6144217325dc3ca95e75b659988d994931d7fb40d42834d3d44f",
+      "docs/TRANSLATION.md": "b65065291a3559f6ade2449ff98383ff588d54adb524dd248cb09ac69823d428"
+    }
+  },
+  "outline_unchanged": true,
+  "finished": "2026-10-18T09:19:56.340962+00:00"
+}

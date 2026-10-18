@@ -1,0 +1,16 @@
+repo_path = "/Users/sergey/ai/aichallenge/outline"
+ollama_url = "http://localhost:11434"
+embedding_model = "bge-m3"
+chat_model = "qwen3:8b"
+index_dir = ".index"
+include = ["README.md", "docs/**/*.md"]
+chunk_chars = 1400
+overlap_chars = 160
+top_k = 5
+batch_size = 8
+http_timeout = 180.0
+mcp_timeout = 30.0
+git_timeout = 10.0
+file_limit = 80
+num_ctx = 16384
+answer_tokens = 1800
